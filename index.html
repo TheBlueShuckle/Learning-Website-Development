@@ -1,24 +1,27 @@
 <!DOCNAME html>
-<html>
-<style>
-    .button{
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    } 
-</style>
-<body style="background-color: black;">
-
-    <H1 style="color: white;">Try me</H1>
+<html lang="sv">
+<body style="background-color: black; font-size: 25; font-family: 'Arial', Courier, monospace; ">
+    
+    <title>Hallå</title>
+    <H1 style="color: white; text-align: center;">Try me</H1>
     <p style="color: white;">Am I right?</p>
     <menu style="color: gray"> how does this work???? </menu>
-    <button class="button" value="Redirect">I dare u to click this</button>
+    <img id="image" src="" />
+
+
+    <button type="button" onclick ="DoSomething()" id="btnID" style="color: black; text-align: center;">I dare u to click this</button>
+
+    <Script>
+        function DoSomething(){
+            /* Get image and change value
+            of src attribute */
+            let image = document.getElementById("image");
+            image.src = "myimage.png"
+            document.getElementById("btnID")
+                .style.display = "none";
+        }
+    
+    </Script>
 
 </body>
 </html>
