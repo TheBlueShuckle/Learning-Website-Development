@@ -6,28 +6,40 @@
     <H1 style="color: white; text-align: center;">Try me</H1>
     <p style="color: white;">Am I right?</p>
     <menu style="color: gray"> how does this work???? </menu>
-    <img id="image" src="" />
+    
     <form>
         <input type="text" id="number" value="0"/>
-        <input type="button" onclick="IncreaseValue()" value="Increment Value"/>
+        <input type="button" onclick="IncreaseValue()" value="Increase Value"/>
+        <input type="button" onclick="DecreaseValue()" value="Decrease Value"/>
         <input type="button" onclick="ResetValue()" value="Reset Value"/>
     </form>
 
     <button type="button" onclick ="DoSomething()" id="btnID" style="color: black; text-align: center;">I dare u to click this</button>
+    <div></div>
+    <img id="image" src="" />
 
     <Script>
         
+        let currentImage = 0;
+
         function DoSomething(){
             /* Get image and change value
             of src attribute */
             let image = document.getElementById("image");
             
-            if (image.src == ""){
+            if (currentImage == 0){
+                image.src = "Telesto_D2_Full.png";
+                currentImage++;
+            }
+
+            else if (currentImage == 1){
                 image.src = "myimage.png";
+                currentImage++;
             }
 
             else{
                 image.src = "";
+                currentImage = 0;
             }
 
             //document.getElementById("btnID")
@@ -38,6 +50,13 @@
             var value = parseInt(document.getElementById('number').value, 10);
             value = isNaN(value) ? 0 : value;
             value++;
+            document.getElementById('number').value = value;
+        }
+
+        function DecreaseValue(){
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value = value - 1;
             document.getElementById('number').value = value;
         }
 
