@@ -1,0 +1,101 @@
+<!DOCNAME html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <body style="background-color:black;">
+    <link rel="stylesheet" href="/mainSite/CSS/navBarStyle.css">
+    <link rel="icon" type="image/x-icon" href="/mainSite/images/favicon.png">
+</head>
+
+<header class="main-header">
+    <a class="logo" href="/index.html" style="color: black; margin: 8px 8px 0px 8px;">
+        <img id="logo-img" style="vertical-align:middle; height: 35px;" src="/mainSite/images/profile pic.png">
+        <span style="display: inline-block; margin-right: 7px;">
+            <p style="font-family: Arial;"><b>The site</b></p>
+        </span>
+    </a>
+
+    <a id="Uppgifter" class="nav-bar-button" href="/mainSite/uppgifter.html" style="margin: 8px 0px 0px 0px;">
+        Uppgifter
+    </a>
+
+    <a id="Tester" class="nav-bar-button" href="/mainSite/tests.html" style="margin: 8px 0px 0px 0px;">
+        Tester
+    </a>
+    
+    <a class="nav-bar-button" href="/mainSite/placeholder.html" style="margin: 8px 0px 0px 0px;">
+        test
+    </a>
+
+    <hr>
+</header>
+
+<body style="background-color: black;">
+    
+    <title>Komsi komsi...</title>
+    <H1 style="color: white; text-align: center; font-family: 'Arial', Courier, monospace;">Try me</H1>
+    <p style="color: white; font-family: 'Arial', Courier, monospace;  font-size: 25;">Am I right?</p>
+    <menu style="color: gray; font-family: 'Arial', Courier, monospace;  font-size: 25;" > how does this work???? </menu>
+    
+    <form>
+        <input type="text" id="number" value="0"/>
+        <input type="button" onclick="IncreaseValue()" value="Increase Value"/>
+        <input type="button" onclick="DecreaseValue()" value="Decrease Value"/>
+        <input type="button" onclick="ResetValue()" value="Reset Value"/>
+    </form>
+
+    <button type="button" onclick ="DoSomething()" id="btnID" style="color: black; text-align: center;">I dare u to click this</button>
+    <div></div>
+    <img id="image" src="" />
+
+    <Script>
+        
+        let currentImage = 0;
+
+        function DoSomething(){
+            /* Get image and change value
+            of src attribute */
+            let image = document.getElementById("image");
+            
+            if (currentImage == 0){
+                image.src = "Telesto_D2_Full.png";
+                currentImage++;
+            }
+
+            else if (currentImage == 1){
+                image.src = "myimage.png";
+                currentImage++;
+            }
+
+            else{
+                image.src = "";
+                currentImage = 0;
+            }
+
+            //document.getElementById("btnID")
+            //    .style.display = "none";
+        }
+
+        function IncreaseValue(){
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').value = value;
+        }
+
+        function DecreaseValue(){
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value = value - 1;
+            document.getElementById('number').value = value;
+        }
+
+        function ResetValue(){
+            document.getElementById('number').value = 0;
+        }
+    
+    </Script>
+
+</body>
+</html>

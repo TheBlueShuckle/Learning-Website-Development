@@ -1,0 +1,41 @@
+
+.main-header {
+    background-color: white; 
+    font-family: sans-serif;
+    margin: -8px;
+}
+
+.logo {
+    border-radius: 20px;
+    font-family: sans-serif;
+    border: 2px solid #000000;
+    padding: 2px; 
+    box-shadow: 5px 5px #000000;
+    display: inline-block; 
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.nav-bar-button {
+    border: none;
+    background-color: #efefef;
+    display: inline-block;
+
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+
+    border-radius: 20px;
+    padding: 4px 16px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 8px 2px 4px 2px;
+    cursor: pointer;
+    width: auto;
+    height: 20px;
+}
+
+.logo:hover {background-color: lightgray;}
+
+.nav-bar-button:hover {background-color: lightgray; color: #000}
