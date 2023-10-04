@@ -1,0 +1,8 @@
+body {
+    background-image: linear-gradient(
+        to right, 
+        rgba(127, 213, 112, 0.8), 
+        rgba(40, 180, 133, 0.8)) , 
+        url(../images/isgud.jpg);
+    background-size: cover;
+}
