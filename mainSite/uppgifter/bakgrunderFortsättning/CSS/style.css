@@ -1,3 +1,4 @@
+/*
 body {
     font-family: "Tangerine", sans-serif;
     font-weight: 400;
@@ -6,6 +7,7 @@ body {
     color: #777;
     padding: 30px;
 }
+*/
 
 .header {
     height: 95vh;
@@ -19,10 +21,4 @@ body {
     /*clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);*/
     /*clip-path: polygon(50% 0, 100% 100%, 0 100%);*/
     clip-path: polygon(0 25%, 60% 25%, 60% 0, 100% 50%, 60% 100%, 60% 75%, 0 75%);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
