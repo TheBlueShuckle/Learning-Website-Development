@@ -52,6 +52,11 @@
     height: 20px;
 }
 
+.nav-bar-hr {
+    margin-bottom: 0px;
+    border-bottom-width: 0px;
+}
+
 .logo:hover {background-color: lightgray;}
 
 .nav-bar-button:hover {background-color: lightgray; color: #000}
