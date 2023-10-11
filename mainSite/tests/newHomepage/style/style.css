@@ -6,8 +6,8 @@ main {
 .header {
     margin-top: -21px;
     background-color: black;
-    height: 1080px;
-    width: 1920px;
+    height: 1000px;
+    width: 100%;
 }
 
 .heading-box {
