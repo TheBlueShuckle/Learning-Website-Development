@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+}
+
+header {
+    padding: 0px;
+    margin: 0px;
+    height: 108px;
+}
+
+.logo {
+    display: inline-block;
+    border: solid;
+    border-radius: 15px;
+    border-color: black;
+    height: 87px;
+    width: 169px;
+    margin: 10.5px;
+}
+
+span {
+    font-size: 20px;
+}
+
+.background-image-frame {
+
+}
+
+.skyline-background {
+    width: 100%;
+}
+
+.fade {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: -webkit-linear-gradient(top, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 90%,
+    rgba(255, 255, 255, 1) 100%);
+}
