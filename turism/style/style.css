@@ -13,9 +13,37 @@ a {
     color: black;
 }
 
-span {
-    font-size: 60px;
+h1 {
+    font-family: 'Arbutus Slab';
+    src: url(https://fonts.googleapis.com/css?family=Arbutus%20Slab);
+    color: #000;
+    text-align: center;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h2 {
+    font-family: 'Arbutus Slab';
+    src: url(https://fonts.googleapis.com/css?family=Arbutus%20Slab);
+    font-size: 40px;
+    font-weight: 400;
+}
+
+p {
+    font-family: "IBM Plex Sans";
+    src: "https://fonts.cdnfonts.com/css/ibm-plex-sans";
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.logo-text {
+    font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }
 
 .logo {
@@ -26,22 +54,54 @@ span {
     height: 77px;
     width: 163px;
     margin: 11px;
+    margin-right: 34px;
 
     text-align: center;
+    line-height: 70px;
 }
 
-.image-container {
+.header-link {
+    font-family: "IBM Plex Sans";
+    src: "https://fonts.cdnfonts.com/css/ibm-plex-sans";
+    font-size: 20px;
+    padding: 28px;
+    transform: translateY(50%);
+}
+
+.carousel-container {
+    margin-top: 63px;
+    justify-content: center;
+    display: flex;
+}
+
+.carousel-text {
+    display: inline-block;
+    position: relative;
+    width: 303px;
+    height: 316px;
+}
+
+.carousel-background {
+    background-color: #d9d9d9; 
+    position: relative; 
+    display: inline-block; 
+    height: 370px; 
+    width: 950px;
+    border-radius: 15px;
+}
+
+#image-container {
     position: relative;
     overflow: hidden;
 }
 
-.skyline-background {
+#skyline-background {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.fade {
+#fade {
     position: absolute;
     bottom: 0;
     left: 0;
