@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                position: relative;
+            }
+
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding-bottom: 64px;
+            }
+
+            .carousel-container {
+                border-style: solid;
+                border-width: 1px;
+                width: 824px;
+                height: 280px;
+                overflow-x: auto;
+                display: flex;
+                gap: 52px;
+                align-items: start;
+                scroll-snap-type: x mandatory;
+            }
+
+            .carousel-container::-webkit-scrollbar {
+                height: 14px;
+                width: calc(100% - 48px);
+            }
+
+            .carousel-container::-webkit-scrollbar-track {
+                background: #b1b3b399;
+            }
+
+            .carousel-container::-webkit-scrollbar-thumb {
+                background: #29AB87;
+            }
+
+            .carousel-container::-webkit-scrollbar-track-piece:start {
+                background: #29AB87;
+            }
+
+            .carousel-slide {
+                border-radius: 15px;
+                height: 270px;
+                width: 240px;
+                flex-flow: column nowrap;
+                display: flex;
+                align-items: center;
+                scroll-snap-align: center;
+            }
+
+            .slide-image {
+                height: 170px;
+                width: 240px;
+                border-radius: 15px;
+                display: inline-block;
+                align-self: flex-start;
+            }
+
+            .slide-text-h2 {
+                align-self: self-start;
+                font-size: 25px;
+                margin: 0px;
+            }
+
+            .slide-text-p {
+                align-self: flex-start;
+                font-size: 20px;
+                margin: 0px;
+            }
+
+            @media (max-width: 600px) {
+                .carousel-slide {
+                    flex: 1 0 90%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background-color: orange;">
+                        
+                    </div>
+                    <h2 class="slide-text-h2">Test</h2>
+                    <p class="slide-text-p">This is a test. Do not be alarmed. Do not worry about it</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background-color: orange;">
+                        
+                    </div>
+                    <p class="slide-text-p">hehe</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background-color: orange;">
+                        
+                    </div>
+                    <p class="slide-text-p">hehe</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background-color: orange;">
+                        
+                    </div>
+                    <p class="slide-text-p">hehe</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background-color: orange;">
+                        
+                    </div>
+                    <p class="slide-text-p">hehe</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
