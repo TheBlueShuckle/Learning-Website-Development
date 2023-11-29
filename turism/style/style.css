@@ -12,6 +12,12 @@ header {
     background-color: #fff;
 }
 
+footer {
+    height: 250px;
+    margin-top: 170px;
+    background-color: #7A7A7A;  
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -79,6 +85,20 @@ p {
     font-size: 20px;
     padding: 28px;
     transform: translateY(50%);
+}
+
+.footer-link-container {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    margin-left: 323px;
+}
+
+.footer-text {
+    color: #FFF;
+}
+
+.footer-mail {
 }
 
 .carousel-heading {
