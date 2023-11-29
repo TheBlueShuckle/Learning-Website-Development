@@ -87,11 +87,19 @@ p {
     transform: translateY(50%);
 }
 
-.footer-link-container {
-    top: 50%;
-    transform: translateY(-50%);
+.footer-container {
     position: relative;
-    margin-left: 323px;
+    top: 50%;
+    transform: translateY(-50%);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 715px;
+}
+
+.footer-link-container {
+    position: relative;
+    width: 186px;
 }
 
 .footer-text {
@@ -99,6 +107,21 @@ p {
 }
 
 .footer-mail {
+    margin-top: auto;
+    width: 354px;
+    display: flex;
+    row-gap: 49px;
+    column-gap: 31px;
+    flex-wrap: wrap;
+}
+
+.footer-mail-text {
+    color: #0048ff;
+}
+
+.footer-by-text {
+    margin: 0; 
+    margin-left: auto;
 }
 
 .carousel-heading {
