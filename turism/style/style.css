@@ -191,6 +191,28 @@ p {
     justify-self: end;
 }
 
+.subway-map-container {
+    margin-top: 127px;
+    text-align: center;
+}
+
+.station-heading {
+    text-align: center;
+}
+
+.station-container {
+    justify-items: center;
+    display: flex;
+    margin:auto;
+    width: 844px;
+    height: 508px;
+    gap: 44px;
+}
+
+.station-text-container {
+    width: 212px;
+}
+
 #image-container {
     position: relative;
     overflow: hidden;
@@ -209,4 +231,9 @@ p {
     width: 100%;
     height: 10%;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+}
+
+#subway-map {
+    width: 1146px;
+    height: 692px;
 }
