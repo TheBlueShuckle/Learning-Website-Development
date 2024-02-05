@@ -1,3 +1,4 @@
+/* Navbar */
 #brand {
     text-decoration: none;
     color: #000;
@@ -14,7 +15,7 @@
     align-items: center;
 
     width: 7em;
-    height: 3.5em;  
+    height: 3.5em;
 }
 
 #logo {
@@ -39,15 +40,62 @@
     color: #000;
 }
 
+/* Main */
 body {
     background-color: white;
 }
 
 main {
     margin: auto;
+    margin-top: 30vh;
     margin-bottom: 5em;
-    padding-top: 170px;
     font-size: 18px;
+}
+
+/* Footer */
+footer {
+    background-color: #424242;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.media-link-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    gap: 35px;
+}
+
+.media-link {
+    color:white;
+    text-decoration: none;
+}
+
+.media-link-icon {
+    color: #424242;
+}
+
+.media-link:hover{
+    color:rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.media-link-icon:hover{
+    color:rgba(0, 0, 0, 0.7);
+}
+
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot:hover {
+    background-color:rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 767.98px) {
@@ -72,7 +120,7 @@ main {
         text-align: center;
         font-size: 32px;
     }
-    
+
     h2 {
         font-size: 27px;
         font-weight: 400;
