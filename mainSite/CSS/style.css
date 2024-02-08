@@ -45,11 +45,22 @@ body {
     background-color: white;
 }
 
-main {
+#introduction {
     margin: auto;
     margin-top: 30vh;
     margin-bottom: 5em;
     font-size: 18px;
+}
+
+#sidebar {
+    position: sticky;
+    margin-top: 30vh;
+    top: 15vh;
+}
+
+#sidebar li {
+    max-height: 65vh;
+    overflow-y: auto;
 }
 
 /* Footer */
@@ -66,7 +77,7 @@ footer {
     gap: 35px;
 }
 
-.media-link {
+footer a {
     color:white;
     text-decoration: none;
 }
@@ -75,7 +86,7 @@ footer {
     color: #424242;
 }
 
-.media-link:hover{
+footer a:hover{
     color:rgba(255, 255, 255, 0.7);
     text-decoration: none;
 }
