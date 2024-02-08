@@ -68,6 +68,15 @@ footer {
     background-color: #424242;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    justify-content: center;
+}
+
+.directory {
+    margin: auto;
+    color:white; 
+    list-style: none; 
+    text-align: left;
 }
 
 .media-link-container {
@@ -91,9 +100,11 @@ footer a:hover{
     text-decoration: none;
 }
 
-.media-link-icon:hover{
+.media-link-icon:hover {
     color:rgba(0, 0, 0, 0.7);
 }
+
+.media-link-icon:hover > .dot { background-color:rgba(255, 255, 255, 0.5); }
 
 .dot {
     height: 50px;
@@ -103,10 +114,6 @@ footer a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.dot:hover {
-    background-color:rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 767.98px) {
@@ -126,7 +133,7 @@ footer a:hover{
     }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     h1 {
         text-align: center;
         font-size: 32px;
