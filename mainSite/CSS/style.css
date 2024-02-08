@@ -52,6 +52,8 @@ body {
     font-size: 18px;
 }
 
+/* Sidebar */
+
 #sidebar {
     position: sticky;
     margin-top: 30vh;
@@ -61,6 +63,10 @@ body {
 #sidebar li {
     max-height: 65vh;
     overflow-y: auto;
+}
+
+#sidebar ul {
+    margin-bottom: 0px;
 }
 
 /* Footer */
