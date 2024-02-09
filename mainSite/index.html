@@ -36,36 +36,8 @@
             </div>
         </nav>
 
-        <main style="display: flex;">
-            <div class="col-md-3"></div>
-            <section id="introduction" class="col-lg-6 col-md-6 col-12">
-                <h1>Hallå</h1>
-
-                <p>Den här websidan är till för att se mina framsteg i webutveckling. Genom att klicka på länkarna uppe i nav-baren kan
-                   man ta sig runt till de olika sidorna. Den stora knappen till vänster är självklart också en länk tillbaka till denna sida. 
-                   Längst ner på sidan finns det länkar till de olika sidorna på denna webbplats, men även länkar till min GitHub, 
-                   min LinkedIn samt min mail-adress. Om man klickar på dessa knappar kommer det öppnas en ny flik som tar en till 
-                   respektive platform. Om man klickar på mail-länken öppnas ens valda mail-tjäns (t.ex E-post appen som följer med 
-                   Windows 10, eller Outlook). På side-baren ser man de senaste uppgifterna jag jobbat med. Dessa tar en till 
-                   uppgifterna så att man kan se vad jag gjort. Tyvärr går det inte att komma tillbaka därifrån genom en länk, så för att 
-                   komma tillbaka behöver man klicka pilen som pekar vänster längst upp i vänstra hörnet av webbläsaren om man är 
-                   på datorn. På telefonen kan det variera, men det bör gå att svepa åt vänster för att komma tillbaka till föregående 
-                   sida. 
-                </p>
-                <p>
-                    Johannes vet inte vad filezilla är lmao
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo sapiente amet unde ex ea veniam delectus pariatur asperiores tempora dolorem, laborum aliquam eligendi eaque quae vero similique sequi at!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat reiciendis illum architecto recusandae adipisci similique fugit, magni voluptatibus! Cum voluptates a deleniti iure corrupti provident quis aspernatur accusamus ratione unde?
-                </p>
-
-                <h1>Om sidan</h1>
-                <p>Den här webbplatsen är gjord med hjälp av Bootstrap 4. Det är en stor css-fil som hjälper en skapa webbsidor som är responsiva.</p>
-    
-                <h2>Uppgifter jag jobbar med:</h2>
-                <a href="/bootstrap/BootstrapDel5-10/index.html"><u>Bootstrap del 10</u></a>
-            </section>
-
-            <section class="col-md-3">
+        <main class="d-flex container-fluid row">
+            <section class="col-md-3 col-12 col-sm-push-12">
                 <div id="sidebar">
                     <h3>Senaste uppgifter:</h3>
                     <li class="list-group">
@@ -75,17 +47,80 @@
                     </li>
                 </div>
             </section>
+
+            <div class="col-lg-6 col-md-6 col-12 main-content col-sm-pull-12">
+                <section id="welcome">
+                    <h1>Hallå</h1>
+    
+                    <p>Den här websidan är till för att se mina framsteg i webutveckling. Genom att klicka på länkarna uppe i nav-baren kan
+                       man ta sig runt till de olika sidorna. Den stora knappen till vänster är självklart också en länk tillbaka till denna sida. 
+                       Längst ner på sidan finns det länkar till de olika sidorna på denna webbplats, men även länkar till min GitHub, 
+                       min LinkedIn samt min mail-adress. Om man klickar på dessa knappar kommer det öppnas en ny flik som tar en till 
+                       respektive platform. Om man klickar på mail-länken öppnas ens valda mail-tjäns (t.ex E-post appen som följer med 
+                       Windows 10, eller Outlook). På side-baren ser man de senaste uppgifterna jag jobbat med. Dessa tar en till 
+                       uppgifterna så att man kan se vad jag gjort. Tyvärr går det inte att komma tillbaka därifrån genom en länk, så för att 
+                       komma tillbaka behöver man klicka pilen som pekar vänster längst upp i vänstra hörnet av webbläsaren om man är 
+                       på datorn. På telefonen kan det variera, men det bör gå att svepa åt vänster för att komma tillbaka till föregående 
+                       sida. 
+                    </p>
+                    <p>
+                        Johannes vet inte vad filezilla är lmao
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo sapiente amet unde ex ea veniam delectus pariatur asperiores tempora dolorem, laborum aliquam eligendi eaque quae vero similique sequi at!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat reiciendis illum architecto recusandae adipisci similique fugit, magni voluptatibus! Cum voluptates a deleniti iure corrupti provident quis aspernatur accusamus ratione unde?
+                    </p>
+                </section>
+    
+                <section id="about-site">
+                    <h1>Om sidan</h1>
+                    <p>Den här webbplatsen är gjord med hjälp av Bootstrap 4. Det är en stor css-fil som hjälper en skapa webbsidor som är responsiva.</p>
+                </section>
+    
+                <section id="assignments">
+                    <h1>Uppgifter jag jobbar med:</h1>
+                    <a href="/bootstrap/BootstrapDel5-10/index.html"><u>Bootstrap del 10</u></a>
+                </section>
+            </div>
+
+            <div class=" d-none d-md-flex col-md-3"></div>
         </main>
 
-        <footer id="footer" class="col-12" style="text-align: center; vertical-align: middle;">
-            <div class="col-6" style="margin: auto;">
-                <ul style="color:white; list-style: none; text-align: left;">
-                    <li><a href="/mainSite/index.html" class="media-link">Hem</a></li>
-                    <li><a href="/mainSite/uppgifter.html" class="media-link">Uppgifter</a></li>
-                    <li><a href="/mainSite/documentation.html" class="media-link">Dokumentation</a></li>
-                    <li><a href="/mainSite/tests.html" class="media-link">Tester</a></li>
-                    <li><a href="/mainSite/archive.html" class="media-link">Archive</a></li>
-                </ul>
+        <footer id="footer" class="col-12" style="text-align: center;">
+            <div class="container-fluid">
+                <div class="col-md-6 col-12 container" style="margin: auto; display: flex; padding-bottom: 50px">
+                    <div class="links">
+                        <h2>Hem</h2>
+                        <a href="/mainSite/index.html#welcome" class="media-link">Hallå</a>
+                        <a href="/mainSite/index.html#about-site" class="media-link">Om sidan</a>
+                        <a href="/mainSite/index.html#assignments" class="media-link">Uppgifter jag jobbar med</a>
+                    </div>
+    
+                    <div class="links">
+                        <h2>Uppgifter</h2>
+                        <a href="/mainSite/index.html" class="media-link">HTML</a>
+                        <a href="/mainSite/uppgifter.html" class="media-link">Hardware</a>
+                        <a href="/mainSite/documentation.html" class="media-link">CSS</a>
+                        <a href="/mainSite/documentation.html" class="media-link">Projekt: Turism</a>
+                        <a href="/mainSite/documentation.html" class="media-link">Responsiv Design</a>
+    
+                    </div>
+    
+                    <div class="links">
+                        <h2>Dokumentering</h2>
+                        <a href="/mainSite/index.html" class="media-link">Dokumentering</a>
+                    </div>
+    
+                    <div class="links">
+                        <h2>Tester</h2>
+                        <a href="/mainSite/index.html" class="media-link">Knappar</a>
+                        <a href="/mainSite/uppgifter.html" class="media-link">Javascript test</a>
+                        <a href="/mainSite/documentation.html" class="media-link">Ny hemsida</a>
+                    </div>
+    
+                    <div class="links">
+                        <h2>Arkiv</h2>
+                        <a href="/mainSite/index.html" class="media-link">Du vet</a>
+                    </div>
+                </div>
             </div>
 
             <div class="media-link-container">

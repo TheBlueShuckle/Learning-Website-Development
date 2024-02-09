@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 107px;
+}
+
 /* Navbar */
 #brand {
     text-decoration: none;
@@ -45,7 +50,7 @@ body {
     background-color: white;
 }
 
-#introduction {
+.main-content {
     margin: auto;
     margin-top: 30vh;
     margin-bottom: 5em;
@@ -72,17 +77,34 @@ body {
 /* Footer */
 footer {
     background-color: #424242;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     justify-content: center;
 }
 
-.directory {
-    margin: auto;
+.links {
+    display: flex;
+    margin: 0 auto;
     color:white; 
     list-style: none; 
     text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.links h2 {
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+
+.links a {
+    font-size: 14px;
+    color: #c0c0c0;
+}
+
+.links a:hover {
+    color: #fff;
 }
 
 .media-link-container {
@@ -136,6 +158,14 @@ footer a:hover{
     .navbar-button {
         margin: auto;
         margin-top: 10px;
+    }
+
+    .main-content {
+        margin-top: 5vh;
+    }
+
+    #sidebar {
+        margin-top: 15vh;
     }
 }
 
