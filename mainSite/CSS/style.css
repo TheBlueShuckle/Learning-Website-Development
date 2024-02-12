@@ -155,18 +155,46 @@ footer a:hover{
         font-weight: 200;
     }
 
+    /* Header */
+
     .navbar-button {
         margin: auto;
         margin-top: 10px;
     }
 
+    /* End Header */
+
+    /* Main */
+
     .main-content {
         margin-top: 5vh;
     }
 
+    /* End Main */
+
+    /* Sidebar */
+
     #sidebar {
         margin-top: 15vh;
     }
+
+    /* End Footer */
+
+    /* Footer */
+
+    .link-container {
+        flex-direction: column;
+    }
+
+    .links h2 {
+        margin: 25px auto 10px auto;
+    }
+
+    .links a {
+        margin: auto;
+    }
+
+    /* End Footer */
 }
 
 @media (min-width: 768px) {
@@ -180,7 +208,11 @@ footer a:hover{
         font-weight: 400;
     }
 
+    /* Header */
+
     .navbar-button {
         margin-left: 5%;
     }
+
+    /* End Header */
 }
