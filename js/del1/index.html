@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style type="text/css">
+            body {
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            #summen {
+                border: black solid 3px;
+                padding: 20px;
+                width: 40%;
+                margin: auto;
+                margin-top: 30px;
+            }
+
+            #inmatad {
+                border: black solid 3px;
+                padding: 20px;
+                width: 40%;
+                margin: auto;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <input text="text" id="inputten" placeholder="Skriv värdet här">
+        <button type="button" id="matain">Mata in</button><br/>
+        <div id="inmatad"></div><br/><br/>
+        <button type="button" id="knappen">Summera</button>
+        <div id="summen"></div>
+    </body>
+
+    <script>
+        document.getElementById('matain').addEventListener('click', funktionett)
+        document.getElementById('knappen').addEventListener('click', funktionen)
+
+        var arrayen = [];
+        var arraynr = 0;
+        var summeraarray = 0;
+
+        function funktionett() {
+            arrayen[arraynr] = parseFloat(document.getElementById('inputten').value);
+            document.getElementById('inputten').value = "";
+            document.getElementById('inmatad').innerHTML = arrayen.join(" ");
+            summeraarray += arrayen[arraynr];
+            arraynr = arraynr + 1;
+        }
+
+        function funktionen() {
+            document.getElementById('summen').innerHTML = "De " + arrayen.length + " talen summeras och blir " + summeraarray;
+        }
+    </script>
+</html>
