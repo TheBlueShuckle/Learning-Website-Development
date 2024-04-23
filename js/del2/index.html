@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Math library</title>
+
+        <style>
+            .dice {
+                float: left;
+                width: 32px;
+                background-color: #f5f5f5;
+                border: #999 1px solid;
+                padding: 10px;
+                font-size: 24px;
+                text-align: center;
+                margin: 5px;
+            }
+
+            .player {
+                width: 50%;
+            }
+
+            .player-result {
+                clear: both;
+            }
+            
+            #playerContainer {
+                display: flex;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="playerContainer">
+            <div class="player">
+                <h1>Spelare 1</h1>
+    
+                <div id="dice1" class="dice">?</div>
+                <div id="dice2" class="dice">?</div>
+                <h2 id="player1-result" class="player-result">Summa: ?</h2>
+            </div>
+    
+            <div class="player">
+                <h1>Spelare 2</h1>
+    
+                <div id="dice3" class="dice">?</div>
+                <div id="dice4" class="dice">?</div>
+                <h2 id="player2-result" class="player-result">Summa: ?</h2>
+            </div>
+        </div>
+
+        <button onmousedown="KastaTärning()">Kasta tärningarna</button>
+        <h2 id="status" style="clear: left;"></h2>
+
+        <script type="text/javascript">
+            function KastaTärning() {
+                var dice1 = document.getElementById("dice1");
+                var dice2 = document.getElementById("dice2");
+                var dice3 = document.getElementById("dice3");
+                var dice4 = document.getElementById("dice4");
+                var player1Result = document.getElementById("player1-result")
+                var player2Result = document.getElementById("player2-result")
+                var status = document.getElementById("status");
+
+                var diceValue1 = Math.floor(Math.random() * 6) + 1;
+                var diceValue2 = Math.floor(Math.random() * 6) + 1;
+                var diceValue3 = Math.floor(Math.random() * 6) + 1;
+                var diceValue4 = Math.floor(Math.random() * 6) + 1;
+                var totalPlayer1 = diceValue1 + diceValue2;
+                var totalPlayer2 = diceValue3 + diceValue4;
+
+                dice1.innerHTML = diceValue1;
+                dice2.innerHTML = diceValue2;
+                dice3.innerHTML = diceValue3;
+                dice4.innerHTML = diceValue4;
+
+                player1Result.innerHTML = "Summa: " + totalPlayer1;
+                player2Result.innerHTML = "Summa: " + totalPlayer2;
+
+                if (totalPlayer1 > totalPlayer2){
+                    status.innerHTML = "Spelare 1 vann!"
+                }
+
+                else if (totalPlayer2 > totalPlayer1) {
+                    status.innerHTML = "Spelare 2 vann!"
+                }
+
+                else {
+                    status.innerHTML = "Oavgjort!"
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tärningssimulator</title>
+
+        <style type="text/css">
+            #player-container {
+                display: flex;
+            }
+
+            .player {
+                width: 50%;
+            }
+
+            .dice {
+                position: relative;
+                height: 100px;
+                border: #000 1px solid;
+                border-radius: 15px;
+            }
+
+            #throw-die {
+                background-color: rgb(82, 186, 179);
+                border-radius: 6px;
+                border: none;
+                color: rgb(255, 255, 255);
+                padding: 10px;
+                text-transform: uppercase;
+                width: 200px;
+                margin: auto;
+            }
+
+            #throw-die:hover {
+                background-color: rgb(62, 166, 159);
+            }
+
+            #throw-die:focus {
+                background-color: rgb(42, 146, 139);
+            }
+
+            #throw-die:
+            </style>
+    </head>
+    <body>
+        <div>
+            <button id="throw-die">Kasta tärningen</button>
+        </div>
+
+        <div id="player-container">
+            <div class="player" id="player1">
+                <h1>Spelare 1</h1>
+
+                <img src="images/dice-1.png" alt="Dice" class="dice" id="dice-1">
+                <img src="images/dice-1.png" alt="Dice" class="dice" id="dice-2">
+            </div>
+
+            <div class="player" id="player2">
+                <h1>Spelare 2</h1>
+
+                <img src="images/dice-1.png" alt="Dice" class="dice" id="dice-3">
+                <img src="images/dice-1.png" alt="Dice" class="dice" id="dice-4">
+            </div>
+        </div>
+
+        <div id="test"></div>
+
+        <script type="text/javascript">
+            document.getElementById('throw-die').addEventListener('click', function() {
+                document.querySelectorAll('.dice').forEach(function(node) {
+                    var t1 = Math.floor(Math.random() * 6) + 1;
+                    node.src = 'images/dice-' + t1 + '.png';
+                })
+            });
+        </script>
+    </body>
+</html>
