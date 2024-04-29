@@ -1,0 +1,38 @@
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url(/yatzy/images/bg4K.png);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+}
+
+#player-container {
+    margin-top: 10vh;
+}
+
+.player {
+
+}
+
+.dice-container {
+    display: flex;
+    margin-top: 10vh;
+    justify-content: center;
+    gap: 5%;
+}
+
+.dice {
+    border: 1px black solid;
+    height: 100px;
+    border-radius: 15%;
+}
+
+#roll-buttton {
+    
+}
