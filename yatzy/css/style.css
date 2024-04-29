@@ -9,15 +9,19 @@ body {
 }
 
 h1 {
-    color: white;
+    margin-top: 7.5vh;
 }
 
 #player-container {
     margin-top: 10vh;
 }
 
-.player {
-
+.text {
+    color: #fff;
+    text-shadow: 1px 1px 0 #000,
+                -1px 1px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000;;
 }
 
 .dice-container {
@@ -28,11 +32,38 @@ h1 {
 }
 
 .dice {
-    border: 1px black solid;
+    border: 1px #000 solid;
     height: 100px;
     border-radius: 15%;
 }
 
-#roll-buttton {
-    
+.dice:hover {
+    filter: brightness(80%);
+}
+
+.dice-checkbox {
+    display: none;
+}
+
+.dice-checkbox:checked + label > img {
+    filter:brightness(65%)
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#roll-button {
+    margin-top: 10vh;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: #fff;
+}
+
+#roll-button:disabled {
+    background-color: #bbbbbb;
+    color: black;
 }
