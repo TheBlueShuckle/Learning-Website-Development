@@ -33,7 +33,9 @@ h1 {
     display: flex;
     margin-top: 10vh;
     justify-content: center;
+    width: 100%;
     gap: 5%;
+    flex-wrap: wrap;
 }
 
 .dice {

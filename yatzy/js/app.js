@@ -12,28 +12,33 @@ function rollDice() {
 
     rollButton.disabled = true;
 
-    setTimeout(function() {
-        if (rollingDice) {
-            clearInterval(rollingDice);
-            rollingDice = null;
-            rollButton.disabled = false;
-            storedDiceValues = [];
-
-            dice.forEach(function(dice) {
-                storedDiceValues.push(dice.value);
-            });
-        }
-    }, rollingTimeMilliseconds);
-
-    rollingDice = setInterval(function() {
+    if (!checkLockedDice(dice)){
         dice.forEach(function(dice) {
-            if (!dice.checkbox.checked){
-                var randomNumber = Math.floor(Math.random() * 6) + 1;
-                dice.value = randomNumber;
-                dice.image.src = 'images/dice-' + randomNumber + '.png'
+            dice.checkbox.disabled = true;
+        })
+
+        setTimeout(function() {
+            if (rollingDice) {
+                clearInterval(rollingDice);
+                rollingDice = null;
+                rollButton.disabled = false;
+                storedDiceValues = [];
+    
+                dice.forEach(function(dice) {
+                    storedDiceValues.push(dice.value);
+                    dice.checkbox.disabled = false;
+                });
             }
-        });
-    }, rollingSpeedMilliseconds);
+        }, rollingTimeMilliseconds);
+    
+        rollingDice = setInterval(function() {
+            dice.forEach(randomizeDiceValue);
+        }, rollingSpeedMilliseconds);
+    }
+
+    else {
+        rollButton.disabled = false;
+    }
 }
 
 class Dice {
@@ -66,5 +71,25 @@ function findLableForElement(element) {
         if (labels[i].htmlFor == idVal) {
             return labels[i];
         }
+    }
+}
+
+function checkLockedDice(dice) {
+    var allDiceLocked = true;
+
+    dice.forEach(function(dice) {
+        if (!dice.checkbox.checked){
+            allDiceLocked = false;
+        }
+    });
+
+    return allDiceLocked;
+}
+
+function randomizeDiceValue(dice) {
+    if (!dice.checkbox.checked){
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
+        dice.value = randomNumber;
+        dice.image.src = 'images/dice-' + randomNumber + '.png'
     }
 }
