@@ -2,17 +2,25 @@ const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
 var rollButton = document.getElementById('roll-button');
 var hasStopped = false;
-var storedDiceValues = [];
+
+class Dice {
+    constructor(checkbox, image, value) {
+        this.checkbox = checkbox;
+        this.image = image;
+        this.value = value;
+    }
+}
+
+var dice = getDice(document.querySelectorAll(".dice-checkbox"));
 
 rollButton.addEventListener('click', rollDice);
 
 function rollDice() {
     var rollingDice;
-    var dice = getDice(document.querySelectorAll(".dice-checkbox"));
 
     rollButton.disabled = true;
 
-    if (!checkLockedDice(dice)){
+    if (!allDiceLocked(dice)){
         dice.forEach(function(dice) {
             dice.checkbox.disabled = true;
         })
@@ -22,30 +30,21 @@ function rollDice() {
                 clearInterval(rollingDice);
                 rollingDice = null;
                 rollButton.disabled = false;
-                storedDiceValues = [];
     
                 dice.forEach(function(dice) {
-                    storedDiceValues.push(dice.value);
                     dice.checkbox.disabled = false;
+                    console.log(dice.value);
                 });
             }
         }, rollingTimeMilliseconds);
     
         rollingDice = setInterval(function() {
-            dice.forEach(randomizeDiceValue);
+            dice.forEach(randomizeDieValue);
         }, rollingSpeedMilliseconds);
     }
 
     else {
         rollButton.disabled = false;
-    }
-}
-
-class Dice {
-    constructor(checkbox, image, value) {
-        this.checkbox = checkbox;
-        this.image = image;
-        this.value = value;
     }
 }
 
@@ -64,21 +63,21 @@ function getDice(diceElements) {
 }
 
 function findLableForElement(element) {
-    var idVal = element.id;
+    var elementId = element.id;
     labels = document.getElementsByTagName("label");
 
     for (let i = 0; i < labels.length; i++) {
-        if (labels[i].htmlFor == idVal) {
+        if (labels[i].htmlFor == elementId) {
             return labels[i];
         }
     }
 }
 
-function checkLockedDice(dice) {
+function allDiceLocked(dice) {
     var allDiceLocked = true;
 
-    dice.forEach(function(dice) {
-        if (!dice.checkbox.checked){
+    dice.forEach(function(die) {
+        if (!die.checkbox.checked){
             allDiceLocked = false;
         }
     });
@@ -86,10 +85,10 @@ function checkLockedDice(dice) {
     return allDiceLocked;
 }
 
-function randomizeDiceValue(dice) {
-    if (!dice.checkbox.checked){
+function randomizeDieValue(die) {
+    if (!die.checkbox.checked){
         var randomNumber = Math.floor(Math.random() * 6) + 1;
-        dice.value = randomNumber;
-        dice.image.src = 'images/dice-' + randomNumber + '.png'
+        die.value = randomNumber;
+        die.image.src = 'images/dice-' + randomNumber + '.png'
     }
 }
