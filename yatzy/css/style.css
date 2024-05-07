@@ -58,6 +58,7 @@ h1 {
 
 .button-container {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     margin-top: 15vh;
 }
@@ -109,4 +110,13 @@ h1 {
     background-color: #2b0000;
     border-radius: 7.5px;
     box-sizing: content-box;
+}
+
+#end-turn-button {
+    width: 50%;
+    height: 5vh;
+    border-radius: 5px;
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    margin: auto;
 }

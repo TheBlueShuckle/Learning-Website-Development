@@ -1,7 +1,7 @@
 const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
-var rollButton = document.getElementById('roll-button');
-var hasStopped = false;
+let rollButton = document.getElementById('roll-button');
+let hasStopped = false;
 
 class Dice {
     constructor(checkbox, image, value) {
@@ -11,12 +11,19 @@ class Dice {
     }
 }
 
-var dice = getDice(document.querySelectorAll(".dice-checkbox"));
+class Player {
+    constructor(player, score, ) {
+        this.player = player;
+        this.score = score;
+    }
+}
+
+let dice = getDice(document.querySelectorAll(".dice-checkbox"));
 
 rollButton.addEventListener('click', rollDice);
 
 function rollDice() {
-    var rollingDice;
+    let rollingDice;
 
     rollButton.disabled = true;
 
@@ -49,10 +56,10 @@ function rollDice() {
 }
 
 function getDice(diceElements) {
-    var dice = [];
+    let dice = [];
 
     for (let i = 0; i < diceElements.length; i++) {
-        var image = findLableForElement(diceElements[i]).getElementsByTagName("img")[0];
+        let image = findLableForElement(diceElements[i]).getElementsByTagName("img")[0];
 
         console.log(image);
          
@@ -63,7 +70,7 @@ function getDice(diceElements) {
 }
 
 function findLableForElement(element) {
-    var elementId = element.id;
+    let elementId = element.id;
     labels = document.getElementsByTagName("label");
 
     for (let i = 0; i < labels.length; i++) {
@@ -74,7 +81,7 @@ function findLableForElement(element) {
 }
 
 function allDiceLocked(dice) {
-    var allDiceLocked = true;
+    let allDiceLocked = true;
 
     dice.forEach(function(die) {
         if (!die.checkbox.checked){
@@ -87,7 +94,7 @@ function allDiceLocked(dice) {
 
 function randomizeDieValue(die) {
     if (!die.checkbox.checked){
-        var randomNumber = Math.floor(Math.random() * 6) + 1;
+        let randomNumber = Math.floor(Math.random() * 6) + 1;
         die.value = randomNumber;
         die.image.src = 'images/dice-' + randomNumber + '.png'
     }
