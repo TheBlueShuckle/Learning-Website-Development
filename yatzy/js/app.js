@@ -11,13 +11,6 @@ class Dice {
     }
 }
 
-class Player {
-    constructor(player, score, ) {
-        this.player = player;
-        this.score = score;
-    }
-}
-
 let dice = getDice(document.querySelectorAll(".dice-checkbox"));
 
 rollButton.addEventListener('click', rollDice);

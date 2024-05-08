@@ -46,6 +46,7 @@ h1 {
 
 .dice:hover {
     filter: brightness(80%);
+    cursor: pointer;
 }
 
 .dice-checkbox {
@@ -119,4 +120,31 @@ h1 {
     font-size: 24px;
     font-family: Helvetica, sans-serif;
     margin: auto;
+}
+
+.score-button-container {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 40vw;
+    gap: 6vh;
+    justify-content: center;
+}
+
+.score-button {
+    display: block;
+    width: 14%;
+}
+
+#scoreboard-ui {
+    display: flex;
+}
+
+#scoreboard {
+    background-color: black;
+}
+
+#scoreboard th {
+    background-color: white;
+    border: 1px solid black
 }
