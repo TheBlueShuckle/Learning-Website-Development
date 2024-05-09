@@ -11,66 +11,10 @@
     </head>
 
     <body>
-        <div id="main-ui" style="display: none;">
-            <h1 class="text-center text">Yatzy</h1>
+        <button class="toggle-scoreboard-button" onclick="toggleScoreboard()">Show Scoreboard</button>
 
-            <div class="dice-container col-12">
-                <input type="checkbox" id="dice-checkbox-1" class="dice-checkbox">
-                <label for="dice-checkbox-1">
-                    <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
-                </label>
-    
-                <input type="checkbox" id="dice-checkbox-2" class="dice-checkbox">
-                <label for="dice-checkbox-2">
-                    <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
-                </label>            
-    
-                <input type="checkbox" id="dice-checkbox-3" class="dice-checkbox">
-                <label for="dice-checkbox-3">
-                    <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
-                </label>            
-    
-                <input type="checkbox" id="dice-checkbox-4" class="dice-checkbox">
-                <label for="dice-checkbox-4">
-                    <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
-                </label>        
-    
-                <input type="checkbox" id="dice-checkbox-5" class="dice-checkbox">
-                <label for="dice-checkbox-5">
-                    <img src="images/dice-1.png" alt="" id="dice-5" class="dice">
-                </label>
-            </div>
-    
-            <div class="button-container">
-                <div class="roll-button" style="margin: auto; margin-bottom: 5vh;">
-                    <button id="roll-button">Roll!</button>
-                </div>
-    
-                <button id="end-turn-button">End turn</button>
-            </div>
-        </div>
-
-        <div id="choose-ui" style="display: none;">
-            <div class="score-button-container">
-                <button class="score-button">Ones</button>
-                <button class="score-button">Twos</button>
-                <button class="score-button">Threes</button>
-                <button class="score-button">Fours</button>
-                <button class="score-button">Fives</button>
-                <button class="score-button">Sixes</button>
-
-                <button class="score-button">One Pair</button>
-                <button class="score-button">Two Pairs</button>
-                <button class="score-button">Three of a Kind</button>
-                <button class="score-button">Small Straight</button>
-                <button class="score-button">Large Straight</button>
-                <button class="score-button">Chance</button>
-                <button class="score-button">Yatzy</button>
-            </div>
-        </div>
-
-        <div id="scoreboard-ui">
-            <table id="scoreboard">
+        <div id="scoreboard">
+            <table>
                 <tr>
                     <th><b>Yatzy</b></th>
                     <th><b>Player 1</b></th>
@@ -167,6 +111,64 @@
                     <th><span>test 2</span></th>
                 </tr>
             </table>
+        </div>
+
+        <div id="main-ui">
+            <h1 class="text-center text">Yatzy</h1>
+
+            <div class="dice-container col-12">
+                <input type="checkbox" id="dice-checkbox-1" class="dice-checkbox">
+                <label for="dice-checkbox-1">
+                    <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
+                </label>
+    
+                <input type="checkbox" id="dice-checkbox-2" class="dice-checkbox">
+                <label for="dice-checkbox-2">
+                    <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
+                </label>            
+    
+                <input type="checkbox" id="dice-checkbox-3" class="dice-checkbox">
+                <label for="dice-checkbox-3">
+                    <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
+                </label>            
+    
+                <input type="checkbox" id="dice-checkbox-4" class="dice-checkbox">
+                <label for="dice-checkbox-4">
+                    <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
+                </label>        
+    
+                <input type="checkbox" id="dice-checkbox-5" class="dice-checkbox">
+                <label for="dice-checkbox-5">
+                    <img src="images/dice-1.png" alt="" id="dice-5" class="dice">
+                </label>
+            </div>
+    
+            <div class="button-container">
+                <div class="roll-button" style="margin: auto; margin-bottom: 5vh;">
+                    <button id="roll-button">Roll!</button>
+                </div>
+    
+                <button id="end-turn-button">End turn</button>
+            </div>
+        </div>
+
+        <div id="choose-ui">
+            <div class="score-button-container">
+                <button class="score-button">Ones</button>
+                <button class="score-button">Twos</button>
+                <button class="score-button">Threes</button>
+                <button class="score-button">Fours</button>
+                <button class="score-button">Fives</button>
+                <button class="score-button">Sixes</button>
+
+                <button class="score-button">One Pair</button>
+                <button class="score-button">Two Pairs</button>
+                <button class="score-button">Three of a Kind</button>
+                <button class="score-button">Small Straight</button>
+                <button class="score-button">Large Straight</button>
+                <button class="score-button">Chance</button>
+                <button class="score-button">Yatzy</button>
+            </div>
         </div>
 
         <script src="js/app.js"></script>

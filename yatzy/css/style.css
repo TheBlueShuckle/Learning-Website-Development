@@ -136,11 +136,15 @@ h1 {
     width: 14%;
 }
 
-#scoreboard-ui {
-    display: flex;
+#scoreboard {
+    display: none;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 10px
 }
 
-#scoreboard {
+#scoreboard table {
     background-color: black;
 }
 

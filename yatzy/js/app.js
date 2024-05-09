@@ -2,6 +2,7 @@ const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
 let rollButton = document.getElementById('roll-button');
 let hasStopped = false;
+let scoreboardIsOpen = false;
 
 class Dice {
     constructor(checkbox, image, value) {
@@ -90,5 +91,17 @@ function randomizeDieValue(die) {
         let randomNumber = Math.floor(Math.random() * 6) + 1;
         die.value = randomNumber;
         die.image.src = 'images/dice-' + randomNumber + '.png'
+    }
+}
+
+function toggleScoreboard() {
+    if (scoreboardIsOpen){
+        document.getElementById("scoreboard").style.display = "none";
+        scoreboardIsOpen = false;
+    }
+
+    else {
+        document.getElementById("scoreboard").style.display = "flex";
+        scoreboardIsOpen = true;
     }
 }
