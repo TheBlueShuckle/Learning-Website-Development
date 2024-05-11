@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
-        <title>Yatzy - The Site</title>
+        <title>Yatzy - Choose Combination - The Site</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -109,44 +108,72 @@
         </div>
 
         <div class="main-content">
-            <h1 class="text-center text">Yatzy</h1>
-
-            <div class="dice-container col-12">
-                <input type="checkbox" id="dice-checkbox-1" class="dice-checkbox">
-                <label for="dice-checkbox-1">
-                    <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
-                </label>
-    
-                <input type="checkbox" id="dice-checkbox-2" class="dice-checkbox">
-                <label for="dice-checkbox-2">
-                    <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
-                </label>            
-    
-                <input type="checkbox" id="dice-checkbox-3" class="dice-checkbox">
-                <label for="dice-checkbox-3">
-                    <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
-                </label>            
-    
-                <input type="checkbox" id="dice-checkbox-4" class="dice-checkbox">
-                <label for="dice-checkbox-4">
-                    <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
-                </label>        
-    
-                <input type="checkbox" id="dice-checkbox-5" class="dice-checkbox">
-                <label for="dice-checkbox-5">
-                    <img src="images/dice-1.png" alt="" id="dice-5" class="dice">
-                </label>
-            </div>
-    
-            <div class="button-container">
-                <div class="roll-button">
-                    <button id="roll-button" onclick="rollDice()">Roll!</button>
-                </div>
-            </div>
-
-            <div class="button-container">
-                <a href="#" class="end-turn-button" onclick="endTurn()"><span>End Turn</span></a>
-            </div>
+            <table class="choose-combination">
+                <tr>
+                    <th>Yatzy</th>
+                    <th>Player name</th>
+                </tr>
+                <tr>
+                    <td>Ones</td>
+                    <td><button class="score-button">3 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Twos</td>
+                    <td><button class="score-button">4 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Threes</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Fours</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Fives</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Sixes</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>One Pair</td>
+                    <td><button class="score-button">4 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Two Pairs</td>
+                    <td><button class="score-button">6 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Three of a Kind</td>
+                    <td><button class="score-button">3 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Four of a kind</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Small Straight</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Large Straight</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Full house</td>
+                    <td><button class="score-button">7 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Chance</td> 
+                    <td><button class="score-button">7 pts</button></td>
+                </tr>
+                <tr>
+                    <td>Yatzy</td>
+                    <td><button class="score-button">0 pts</button></td>
+                </tr>
+            </table>
         </div>
 
         <script src="js/app.js"></script>

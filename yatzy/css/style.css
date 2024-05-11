@@ -17,10 +17,7 @@ h1 {
     margin-top: 7.5vh;
 }
 
-#player-container {
-    margin-top: 10vh;
-}
-
+/*Use for text that will be displayed over the background image*/
 .text {
     color: #fff;
     text-shadow: 1px 1px 0 #000,
@@ -29,6 +26,7 @@ h1 {
                 1px -1px 0 #000;;
 }
 
+/*Dice*/
 .dice-container {
     display: flex;
     margin-top: 10vh;
@@ -57,9 +55,9 @@ h1 {
     filter:brightness(65%)
 }
 
+/*Roll button*/
 .button-container {
     display: flex;
-    flex-flow: column;
     justify-content: center;
     margin-top: 15vh;
 }
@@ -67,7 +65,6 @@ h1 {
 .roll-button {
     position: relative;
     display: inline-block;
-    margin: 20px;
 }
 
 .roll-button button{
@@ -113,42 +110,56 @@ h1 {
     box-sizing: content-box;
 }
 
-#end-turn-button {
+/*End turn button*/
+.end-turn-button {
+    background-color: white;
+    color: black;
+    border: 1px black solid;
+    padding: 5px;
     width: 50%;
-    height: 5vh;
-    border-radius: 5px;
+    text-align: center;
     font-size: 24px;
-    font-family: Helvetica, sans-serif;
-    margin: auto;
+    border-radius: 5px;
 }
 
-.score-button-container {
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    width: 40vw;
-    gap: 6vh;
-    justify-content: center;
+.end-turn-button:hover {
+    text-decoration: none;
+    color: black;
+    filter: brightness(85%)
 }
 
+/*Score buttons*/
 .score-button {
     display: block;
-    width: 14%;
+    width: 10vh;
 }
 
-#scoreboard {
+/*Scoreboard*/
+.scoreboard {
     display: none;
     position: fixed;
+    z-index: 1;
     top: 50%;
     transform: translate(0, -50%);
-    left: 10px
+    left: 10px;
+    background-color: #fff;
 }
 
-#scoreboard table {
-    background-color: black;
+.scoreboard th, td {
+    border: 1px solid black;
+    padding: 5px;
 }
 
-#scoreboard th {
-    background-color: white;
-    border: 1px solid black
+
+/*Choose UI i guess*/
+.choose-combination {
+    text-align: center;
+    margin: auto;
+    margin-top: 10vh;
+    background-color: #fff;
+    border: 1px #000 solid;
+}
+
+.choose-combination td {
+    padding: 5px;
 }

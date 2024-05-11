@@ -1,6 +1,5 @@
 const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
-let rollButton = document.getElementById('roll-button');
 let hasStopped = false;
 let scoreboardIsOpen = false;
 
@@ -12,11 +11,48 @@ class Dice {
     }
 }
 
+class ValueCounter {
+    constructor(valueArr) {
+        this.ones = 0; 
+        this.twos = 0; 
+        this.threes = 0;
+        this.fours = 0;
+        this.fives = 0; 
+        this.sixes = 0;
+
+        valueArr.forEach((value) => {
+            switch (value) {
+                case 1: 
+                    this.ones++;
+                    break;
+                case 2:
+                    this.twos++;
+                    break;
+                case 3: 
+                    this.threes++;
+                    break;
+                case 4: 
+                    this.fours++;
+                    break;
+                case 5: 
+                    this.fives++;
+                    break;
+                case 6:
+                    this.sixes++;
+                    break;
+            }
+        })
+    }
+
+    printValues() {
+        console.log(this.ones + ", " + this.twos + ", " + this.threes + ", " + this.fours + ", " + this.fives + ", " + this.sixes)
+    }
+}
+
 let dice = getDice(document.querySelectorAll(".dice-checkbox"));
 
-rollButton.addEventListener('click', rollDice);
-
 function rollDice() {
+    let rollButton = document.getElementById('roll-button');
     let rollingDice;
 
     rollButton.disabled = true;
@@ -47,6 +83,17 @@ function rollDice() {
     else {
         rollButton.disabled = false;
     }
+}
+
+function endTurn() {
+    let dieValues = [];
+
+    dice.forEach(function(die) {
+        dieValues.push(die.value);
+    });
+
+    let valueCounter = new ValueCounter(dieValues);
+    valueCounter.printValues();
 }
 
 function getDice(diceElements) {
@@ -96,12 +143,12 @@ function randomizeDieValue(die) {
 
 function toggleScoreboard() {
     if (scoreboardIsOpen){
-        document.getElementById("scoreboard").style.display = "none";
+        document.getElementsByClassName("scoreboard")[0].style.display = "none";
         scoreboardIsOpen = false;
     }
 
     else {
-        document.getElementById("scoreboard").style.display = "flex";
+        document.getElementsByClassName("scoreboard")[0].style.display = "flex";
         scoreboardIsOpen = true;
     }
 }
