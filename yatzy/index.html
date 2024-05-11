@@ -51,6 +51,11 @@
                     <td><span>test 2</span></th>
                 </tr>
                 <tr>
+                    <td>Sum</td>
+                    <td><span>test 1</span></td>
+                    <td><span>test 2</span></th>
+                </tr>
+                <tr>
                     <td>Bonus</td>
                     <td><span>test 1</span></td>
                     <td><span>test 2</span></th>
@@ -108,7 +113,7 @@
             </table>
         </div>
 
-        <div class="main-content">
+        <div class="main-content" id="main-ui">
             <h1 class="text-center text">Yatzy</h1>
 
             <div class="dice-container col-12">
@@ -145,8 +150,77 @@
             </div>
 
             <div class="button-container">
-                <a href="#" class="end-turn-button" onclick="endTurn()"><span>End Turn</span></a>
+                <button class="end-turn-button" onclick="endTurn()">End Turn</button>
             </div>
+        </div>
+
+        <div class="main-content" id="choose-ui">
+            <table class="choose-combination">
+                <tr>
+                    <th>Yatzy</th>
+                    <th>Player name</th>
+                </tr>
+                <tr>
+                    <td>Ones</td>
+                    <td><button class="score-button" id="ones-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Twos</td>
+                    <td><button class="score-button" id="twos-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Threes</td>
+                    <td><button class="score-button" id="threes-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Fours</td>
+                    <td><button class="score-button" id="fours-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Fives</td>
+                    <td><button class="score-button" id="fives-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Sixes</td>
+                    <td><button class="score-button" id="sixes-button"></button></td>
+                </tr>
+                <tr>
+                    <td>One Pair</td>
+                    <td><button class="score-button" id="one-pair-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Two Pairs</td>
+                    <td><button class="score-button" id="two-pairs-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Three of a Kind</td>
+                    <td><button class="score-button" id="three-of-a-kind-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Four of a kind</td>
+                    <td><button class="score-button" id="four-of-a-kind-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Small Straight</td>
+                    <td><button class="score-button" id="small-straight-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Large Straight</td>
+                    <td><button class="score-button" id="large-straight-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Full house</td>
+                    <td><button class="score-button" id="full-house-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Chance</td> 
+                    <td><button class="score-button" id="chance-button"></button></td>
+                </tr>
+                <tr>
+                    <td>Yatzy</td>
+                    <td><button class="score-button" id="yatzy-button"></button></td>
+                </tr>
+            </table>
         </div>
 
         <script src="js/app.js"></script>

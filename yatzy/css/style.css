@@ -152,6 +152,10 @@ h1 {
 
 
 /*Choose UI i guess*/
+#choose-ui {
+    display: none;
+}
+
 .choose-combination {
     text-align: center;
     margin: auto;
