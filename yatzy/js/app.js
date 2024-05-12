@@ -112,24 +112,28 @@ function endTurn() {
 }
 
 function displayTopValues(valueCounter) {
-    document.getElementById('ones-button').innerHTML = valueCounter.ValueCounts[0] + ' pts';
-    document.getElementById('twos-button').innerHTML = 2 * valueCounter.ValueCounts[1] + ' pts';
-    document.getElementById('threes-button').innerHTML = 3 * valueCounter.ValueCounts[2] + ' pts';
-    document.getElementById('fours-button').innerHTML = 4 * valueCounter.ValueCounts[3] + ' pts';
-    document.getElementById('fives-button').innerHTML = 5 * valueCounter.ValueCounts[4] + ' pts';
-    document.getElementById('sixes-button').innerHTML = 6 * valueCounter.ValueCounts[5] + ' pts';
+    setPointTextById('ones-button', valueCounter.ValueCounts[0])
+    setPointTextById('twos-button', 2 * valueCounter.ValueCounts[1])
+    setPointTextById('threes-button', 3 * valueCounter.ValueCounts[2])
+    setPointTextById('fours-button', 4 * valueCounter.ValueCounts[3])
+    setPointTextById('fives-button', 5 * valueCounter.ValueCounts[4])
+    setPointTextById('sixes-button', 6 * valueCounter.ValueCounts[5])
 }
 
 function displayBottomValues(valueCounter) {
-    document.getElementById('one-pair-button').innerHTML = valueCounter.getOnePairValue(valueCounter) + ' pts';
-    document.getElementById('two-pairs-button').innerHTML = valueCounter.getTwoPairsValue(valueCounter) + ' pts';
-    document.getElementById('three-of-a-kind-button').innerHTML = valueCounter.getThreeOfAKindValue(valueCounter) + ' pts';
-    document.getElementById('four-of-a-kind-button').innerHTML = valueCounter.getFourOfAKindValue(valueCounter) + ' pts';
-    document.getElementById('small-straight-button').innerHTML = valueCounter.getSmallStraightValue(valueCounter) + ' pts';
-    document.getElementById('large-straight-button').innerHTML = valueCounter.getLargeStraightValue(valueCounter) + ' pts';
-    document.getElementById('full-house-button').innerHTML = valueCounter.getFullHouseValue(valueCounter) + ' pts';
-    document.getElementById('chance-button').innerHTML = valueCounter.getChanceValue(valueCounter) + ' pts';
-    document.getElementById('yatzy-button').innerHTML = valueCounter.getYatzyValue(valueCounter) + ' pts';
+    setPointTextById('one-pair-button', valueCounter.getOnePairValue(valueCounter))
+    setPointTextById('two-pairs-button', valueCounter.getTwoPairsValue(valueCounter))
+    setPointTextById('three-of-a-kind-button', valueCounter.getThreeOfAKindValue(valueCounter))
+    setPointTextById('four-of-a-kind-button', valueCounter.getFourOfAKindValue(valueCounter))
+    setPointTextById('small-straight-button', valueCounter.getSmallStraightValue(valueCounter))
+    setPointTextById('large-straight-button', valueCounter.getLargeStraightValue(valueCounter))
+    setPointTextById('full-house-button', valueCounter.getFullHouseValue(valueCounter))
+    setPointTextById('chance-button', valueCounter.getChanceValue(valueCounter))
+    setPointTextById('yatzy-button', valueCounter.getYatzyValue(valueCounter))
+}
+
+function setPointTextById(id, value) {
+    document.getElementById(id).innerHTML = value + ' pts';
 }
 
 function toggleScoreboard() {
