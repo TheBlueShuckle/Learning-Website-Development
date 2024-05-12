@@ -111,7 +111,7 @@ h1 {
 }
 
 /*End turn button*/
-.end-turn-button {
+#end-turn-button {
     background-color: white;
     color: black;
     border: 1px black solid;
@@ -122,7 +122,7 @@ h1 {
     border-radius: 5px;
 }
 
-.end-turn-button:hover {
+#end-turn-button:hover {
     text-decoration: none;
     color: black;
     filter: brightness(85%)
