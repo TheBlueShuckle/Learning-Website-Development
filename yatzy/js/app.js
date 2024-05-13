@@ -238,7 +238,7 @@ function addScoreToPlayerScore(id) {
 }
 
 function getCurrentPlayer() {
-    return turn % 2 ? player2 : player1;
+    return turn % 2 === 0 ?  player1 : player2;
 }
 
 function updateScoreboard() {
