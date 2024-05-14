@@ -23,6 +23,10 @@ class Player {
         this.pickedCombinations = [];
     }
 
+    get PickedCombinations() {
+        return this.pickedCombinations;
+    }
+
     getBonus() {
         if (this.getSumUpperHalf > 63) {
             return 50;

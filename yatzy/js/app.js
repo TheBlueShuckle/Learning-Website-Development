@@ -76,7 +76,7 @@ function rollDice() {
                 }
             }
         }, rollingTimeMilliseconds);
-    
+
         rollingDice = setInterval(function() {
             dice.forEach(randomizeDieValue);
         }, rollingSpeedMilliseconds);
@@ -306,9 +306,25 @@ function initiatePlayers() {
 }
 
 function lockPickedCombinations(player) {
-    player.pickedCombinations.forEach(function(buttonId) {
-        document.getElementById(buttonId).disabled = true;
-    });
+    let pickedCombinations = player.PickedCombinations;
+
+    for(let i = 0; i < pickedCombinations.length; i++) {
+        document.getElementById(pickedCombinations[i]).disabled = true;
+    }
+
+    printPickedCombinations(player);
+}
+
+function printPickedCombinations(player) {
+    if (true) {
+        let string = "";
+
+        for (let i = 0; i < player.PickedCombinations; i++) {
+            string += player.PickedCombinations[i] + " ";
+        }
+    
+        console.log(string);
+    }
 }
 
 function toggleScoreboard() {
