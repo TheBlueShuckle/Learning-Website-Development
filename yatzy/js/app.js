@@ -1,5 +1,6 @@
 const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
+const maxRollsPerTurn = 3;
 let scoreboardIsOpen = false;
 let turn = 0;
 let diceRollCount = 0;
@@ -28,16 +29,27 @@ function changePlayer(i) {
     let buttonId = document.getElementsByClassName('score-button')[i].id;
     addScoreToPlayer(buttonId);
     getCurrentPlayer().pickedCombinations.push(buttonId);
+    updateScoreboard();
 
     for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
         document.querySelectorAll('.score-button')[i].disabled = false;
     }
 
-    updateScoreboard();
     turn++;
     diceRollCount = 0;
+
+    resetMainButtons();
+
     document.getElementById('main-ui').style.display = 'block';
     document.getElementById('choose-ui').style.display =  'none';
+}
+
+function resetMainButtons() {
+    let rollButton = document.getElementById('roll-button');
+    let endTurnButton = document.getElementById('end-turn-button');
+
+    rollButton.disabled = false;
+    endTurnButton.disabled = true;
 }
 
 function rollDice() {
@@ -66,11 +78,11 @@ function rollDice() {
 
                 diceRollCount++;
 
-                if (diceRollCount < 1) {
+                if (diceRollCount === 0) {
                     endTurnButton.disabled = true;
                 }
 
-                if (diceRollCount > 2) {
+                if (diceRollCount === maxRollsPerTurn) {
                     rollButton.disabled = true;
                 }
             }
