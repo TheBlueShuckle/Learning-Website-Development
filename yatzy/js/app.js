@@ -26,7 +26,7 @@ for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
 
 function changePlayer(i) {
     let buttonId = document.getElementsByClassName('score-button')[i].id;
-    addScoreToPlayerScore(buttonId);
+    addScoreToPlayer(buttonId);
     getCurrentPlayer().pickedCombinations.push(buttonId);
 
     for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
@@ -62,7 +62,6 @@ function rollDice() {
     
                 dice.forEach(function(dice) {
                     dice.checkbox.disabled = false;
-                    console.log(dice.value);
                 });
 
                 diceRollCount++;
@@ -93,8 +92,6 @@ function getDice(diceElements) {
 
     for (let i = 0; i < diceElements.length; i++) {
         let image = findLableForElement(diceElements[i]).getElementsByTagName("img")[0];
-
-        console.log(image);
          
         dice.push(new Dice(diceElements[i], image, 1))
     }
@@ -143,7 +140,6 @@ function endTurn() {
     });
 
     valueCounter = new ValueCounter(dieValues);
-    valueCounter.printValues();
     lockPickedCombinations(getCurrentPlayer());
 
     displayValues(valueCounter);
@@ -172,67 +168,52 @@ function setPointTextById(id, value) {
     document.getElementById(id).innerHTML = value + ' pts';
 }
 
-function addScoreToPlayerScore(id) {
+function addScoreToPlayer(id) {
     switch(id) {
         case 'ones-button': 
             getCurrentPlayer().ones = valueCounter.ValueCounts[0];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().ones);
             break;
         case 'twos-button': 
             getCurrentPlayer().twos = 2 * valueCounter.ValueCounts[1];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().twos);
             break;
         case 'threes-button': 
             getCurrentPlayer().threes = 3 * valueCounter.ValueCounts[2];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().threes);
             break;
         case 'fours-button': 
             getCurrentPlayer().fours = 4 * valueCounter.ValueCounts[3];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().fours);
             break;
         case 'fives-button': 
             getCurrentPlayer().fives = 5 * valueCounter.ValueCounts[4];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().fives);
             break;
         case 'sixes-button': 
             getCurrentPlayer().sixes = 6 * valueCounter.ValueCounts[5];
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().sixes);
             break;
         case 'one-pair-button': 
             getCurrentPlayer().onePair = valueCounter.getOnePairValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().onePair);
             break;
         case 'two-pairs-button': 
             getCurrentPlayer().twoPairs = valueCounter.getTwoPairsValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().twoPairs);
             break;
         case 'three-of-a-kind-button': 
             getCurrentPlayer().threeOfAKind = valueCounter.getThreeOfAKindValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().threeOfAKind);
             break;
         case 'four-of-a-kind-button': 
             getCurrentPlayer().fourOfAKind = valueCounter.getFourOfAKindValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().fourOfAKind);
             break;
         case 'small-straight-button': 
             getCurrentPlayer().smallStraight = valueCounter.getSmallStraightValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().smallStraight);
             break;
         case 'large-straight-button': 
             getCurrentPlayer().largeStraight = valueCounter.getLargeStraightValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().largeStraight);
             break;
         case 'full-house-button': 
             getCurrentPlayer().fullHouse = valueCounter.getFullHouseValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().fullHouse)
             break;
         case 'chance-button': 
             getCurrentPlayer().chance = valueCounter.getChanceValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().chance);
             break;
         case 'yatzy-button': 
             getCurrentPlayer().yatzy = valueCounter.getYatzyValue();
-            console.log("Success! \nPlayers new value is " + getCurrentPlayer().yatzy);
             break;
     }
 }
