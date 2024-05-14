@@ -27,11 +27,11 @@ for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
 function changePlayer(i) {
     let buttonId = document.getElementsByClassName('score-button')[i].id;
     addScoreToPlayerScore(buttonId);
-    getCurrentPlayer().pickedCombinations.push(buttonId)
+    getCurrentPlayer().pickedCombinations.push(buttonId);
 
-    document.querySelectorAll('score-button').forEach(function(button) {
-        button.disabled = false;
-    })
+    for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
+        document.querySelectorAll('.score-button')[i].disabled = false;
+    }
 
     updateScoreboard();
     turn++;
@@ -310,20 +310,6 @@ function lockPickedCombinations(player) {
 
     for(let i = 0; i < pickedCombinations.length; i++) {
         document.getElementById(pickedCombinations[i]).disabled = true;
-    }
-
-    printPickedCombinations(player);
-}
-
-function printPickedCombinations(player) {
-    if (true) {
-        let string = "";
-
-        for (let i = 0; i < player.PickedCombinations; i++) {
-            string += player.PickedCombinations[i] + " ";
-        }
-    
-        console.log(string);
     }
 }
 
