@@ -157,15 +157,15 @@ function displayValues(valueCounter) {
     setPointTextById('fives-button', 5 * valueCounter.ValueCounts[4])
     setPointTextById('sixes-button', 6 * valueCounter.ValueCounts[5])
 
-    setPointTextById('one-pair-button', valueCounter.getOnePairValue(valueCounter))
-    setPointTextById('two-pairs-button', valueCounter.getTwoPairsValue(valueCounter))
-    setPointTextById('three-of-a-kind-button', valueCounter.getThreeOfAKindValue(valueCounter))
-    setPointTextById('four-of-a-kind-button', valueCounter.getFourOfAKindValue(valueCounter))
-    setPointTextById('small-straight-button', valueCounter.getSmallStraightValue(valueCounter))
-    setPointTextById('large-straight-button', valueCounter.getLargeStraightValue(valueCounter))
-    setPointTextById('full-house-button', valueCounter.getFullHouseValue(valueCounter))
-    setPointTextById('chance-button', valueCounter.getChanceValue(valueCounter))
-    setPointTextById('yatzy-button', valueCounter.getYatzyValue(valueCounter))
+    setPointTextById('one-pair-button', valueCounter.getOnePairValue())
+    setPointTextById('two-pairs-button', valueCounter.getTwoPairsValue())
+    setPointTextById('three-of-a-kind-button', valueCounter.getThreeOfAKindValue())
+    setPointTextById('four-of-a-kind-button', valueCounter.getFourOfAKindValue())
+    setPointTextById('small-straight-button', valueCounter.getSmallStraightValue())
+    setPointTextById('large-straight-button', valueCounter.getLargeStraightValue())
+    setPointTextById('full-house-button', valueCounter.getFullHouseValue())
+    setPointTextById('chance-button', valueCounter.getChanceValue())
+    setPointTextById('yatzy-button', valueCounter.getYatzyValue())
 }
 
 function setPointTextById(id, value) {
