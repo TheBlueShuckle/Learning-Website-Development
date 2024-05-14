@@ -242,47 +242,26 @@ function getCurrentPlayer() {
 }
 
 function updateScoreboard() {
-    if (getCurrentPlayer() === player1) {
-        updateScoreboardValue('p1-ones', player1.ones)
-        updateScoreboardValue('p1-twos', player1.twos)
-        updateScoreboardValue('p1-threes', player1.threes)
-        updateScoreboardValue('p1-fours', player1.fours)
-        updateScoreboardValue('p1-fives', player1.fives)
-        updateScoreboardValue('p1-sixes', player1.sixes)
-        updateScoreboardValue('p1-top-sum', player1.getSumUpperHalf())
-        updateScoreboardValue('p1-bonus', player1.getBonus())
-        updateScoreboardValue('p1-one-pair', player1.onePair)
-        updateScoreboardValue('p1-two-pairs', player1.twoPairs)
-        updateScoreboardValue('p1-three-of-a-kind', player1.threeOfAKind)
-        updateScoreboardValue('p1-four-of-a-kind', player1.fourOfAKind)
-        updateScoreboardValue('p1-small-straight', player1.smallStraight)
-        updateScoreboardValue('p1-large-straight', player1.largeStraight)
-        updateScoreboardValue('p1-full-house', player1.fullHouse)
-        updateScoreboardValue('p1-chance', player1.chance)
-        updateScoreboardValue('p1-yatzy', player1.yatzy)
-        updateScoreboardValue('p1-total', player1.getTotalSum())
-    }
+    let currentPlayer = getCurrentPlayer() === player1 ? 'p1' : 'p2';
 
-    if (getCurrentPlayer() === player2) {
-        updateScoreboardValue('p2-ones', player2.ones)
-        updateScoreboardValue('p2-twos', player2.twos)
-        updateScoreboardValue('p2-threes', player2.threes)
-        updateScoreboardValue('p2-fours', player2.fours)
-        updateScoreboardValue('p2-fives', player2.fives)
-        updateScoreboardValue('p2-sixes', player2.sixes)
-        updateScoreboardValue('p2-top-sum', player2.getSumUpperHalf())
-        updateScoreboardValue('p2-bonus', player2.getBonus())
-        updateScoreboardValue('p2-one-pair', player2.onePair)
-        updateScoreboardValue('p2-two-pairs', player2.twoPairs)
-        updateScoreboardValue('p2-three-of-a-kind', player2.threeOfAKind)
-        updateScoreboardValue('p2-four-of-a-kind', player2.fourOfAKind)
-        updateScoreboardValue('p2-small-straight', player2.smallStraight)
-        updateScoreboardValue('p2-large-straight', player2.largeStraight)
-        updateScoreboardValue('p2-full-house', player2.fullHouse)
-        updateScoreboardValue('p2-chance', player2.chance)
-        updateScoreboardValue('p2-yatzy', player2.yatzy)
-        updateScoreboardValue('p2-total', player2.getTotalSum())
-    }
+    updateScoreboardValue(currentPlayer + '-ones', getCurrentPlayer().ones)
+    updateScoreboardValue(currentPlayer + '-twos', getCurrentPlayer().twos)
+    updateScoreboardValue(currentPlayer + '-threes', getCurrentPlayer().threes)
+    updateScoreboardValue(currentPlayer + '-fours', getCurrentPlayer().fours)
+    updateScoreboardValue(currentPlayer + '-fives', getCurrentPlayer().fives)
+    updateScoreboardValue(currentPlayer + '-sixes', getCurrentPlayer().sixes)
+    updateScoreboardValue(currentPlayer + '-top-sum', getCurrentPlayer().getSumUpperHalf())
+    updateScoreboardValue(currentPlayer + '-bonus', getCurrentPlayer().getBonus())
+    updateScoreboardValue(currentPlayer + '-one-pair', getCurrentPlayer().onePair)
+    updateScoreboardValue(currentPlayer + '-two-pairs', getCurrentPlayer().twoPairs)
+    updateScoreboardValue(currentPlayer + '-three-of-a-kind', getCurrentPlayer().threeOfAKind)
+    updateScoreboardValue(currentPlayer + '-four-of-a-kind', getCurrentPlayer().fourOfAKind)
+    updateScoreboardValue(currentPlayer + '-small-straight', getCurrentPlayer().smallStraight)
+    updateScoreboardValue(currentPlayer + '-large-straight', getCurrentPlayer().largeStraight)
+    updateScoreboardValue(currentPlayer + '-full-house', getCurrentPlayer().fullHouse)
+    updateScoreboardValue(currentPlayer + '-chance', getCurrentPlayer().chance)
+    updateScoreboardValue(currentPlayer + '-yatzy', getCurrentPlayer().yatzy)
+    updateScoreboardValue(currentPlayer + '-total', getCurrentPlayer().getTotalSum())
 }
 
 function updateScoreboardValue(id, value) {
