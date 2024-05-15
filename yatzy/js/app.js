@@ -132,7 +132,7 @@ function getDice(diceElements) {
     for (let i = 0; i < diceElements.length; i++) {
         let image = findLableForElement(diceElements[i]).getElementsByTagName("img")[0];
          
-        dice.push(new Dice(diceElements[i], image, 1))
+        dice.push(new Dice(diceElements[i], image, 1));
     }
 
     return dice;
@@ -162,10 +162,10 @@ function allDiceLocked(dice) {
 }
 
 function randomizeDieValue(die) {
-    if (!die.checkbox.checked){
+    if (!die.checkbox.checked) {
         let randomNumber = Math.floor(Math.random() * 6) + 1;
         die.value = randomNumber;
-        die.image.src = 'images/dice-' + randomNumber + '.png'
+        die.image.src = 'images/dice-' + randomNumber + '.png';
     }
 }
 
@@ -185,22 +185,22 @@ function endTurn() {
 }
 
 function displayValues(valueCounter) {
-    setPointTextById('ones-button', valueCounter.ValueCounts[0])
-    setPointTextById('twos-button', 2 * valueCounter.ValueCounts[1])
-    setPointTextById('threes-button', 3 * valueCounter.ValueCounts[2])
-    setPointTextById('fours-button', 4 * valueCounter.ValueCounts[3])
-    setPointTextById('fives-button', 5 * valueCounter.ValueCounts[4])
-    setPointTextById('sixes-button', 6 * valueCounter.ValueCounts[5])
+    setPointTextById('ones-button', valueCounter.ValueCounts[0]);
+    setPointTextById('twos-button', 2 * valueCounter.ValueCounts[1]);
+    setPointTextById('threes-button', 3 * valueCounter.ValueCounts[2]);
+    setPointTextById('fours-button', 4 * valueCounter.ValueCounts[3]);
+    setPointTextById('fives-button', 5 * valueCounter.ValueCounts[4]);
+    setPointTextById('sixes-button', 6 * valueCounter.ValueCounts[5]);
 
-    setPointTextById('one-pair-button', valueCounter.getOnePairValue())
-    setPointTextById('two-pairs-button', valueCounter.getTwoPairsValue())
-    setPointTextById('three-of-a-kind-button', valueCounter.getThreeOfAKindValue())
-    setPointTextById('four-of-a-kind-button', valueCounter.getFourOfAKindValue())
-    setPointTextById('small-straight-button', valueCounter.getSmallStraightValue())
-    setPointTextById('large-straight-button', valueCounter.getLargeStraightValue())
-    setPointTextById('full-house-button', valueCounter.getFullHouseValue())
-    setPointTextById('chance-button', valueCounter.getChanceValue())
-    setPointTextById('yatzy-button', valueCounter.getYatzyValue())
+    setPointTextById('one-pair-button', valueCounter.getOnePairValue());
+    setPointTextById('two-pairs-button', valueCounter.getTwoPairsValue());
+    setPointTextById('three-of-a-kind-button', valueCounter.getThreeOfAKindValue());
+    setPointTextById('four-of-a-kind-button', valueCounter.getFourOfAKindValue());
+    setPointTextById('small-straight-button', valueCounter.getSmallStraightValue());
+    setPointTextById('large-straight-button', valueCounter.getLargeStraightValue());
+    setPointTextById('full-house-button', valueCounter.getFullHouseValue());
+    setPointTextById('chance-button', valueCounter.getChanceValue());
+    setPointTextById('yatzy-button', valueCounter.getYatzyValue());
 }
 
 function setPointTextById(id, value) {
@@ -264,24 +264,24 @@ function getCurrentPlayer() {
 function updateScoreboard() {
     let currentPlayer = getCurrentPlayer() === player1 ? 'p1' : 'p2';
 
-    updateScoreboardValue(currentPlayer + '-ones', getCurrentPlayer().ones)
-    updateScoreboardValue(currentPlayer + '-twos', getCurrentPlayer().twos)
-    updateScoreboardValue(currentPlayer + '-threes', getCurrentPlayer().threes)
-    updateScoreboardValue(currentPlayer + '-fours', getCurrentPlayer().fours)
-    updateScoreboardValue(currentPlayer + '-fives', getCurrentPlayer().fives)
-    updateScoreboardValue(currentPlayer + '-sixes', getCurrentPlayer().sixes)
-    updateScoreboardValue(currentPlayer + '-top-sum', getCurrentPlayer().getSumUpperHalf())
-    updateScoreboardValue(currentPlayer + '-bonus', getCurrentPlayer().getBonus())
-    updateScoreboardValue(currentPlayer + '-one-pair', getCurrentPlayer().onePair)
-    updateScoreboardValue(currentPlayer + '-two-pairs', getCurrentPlayer().twoPairs)
-    updateScoreboardValue(currentPlayer + '-three-of-a-kind', getCurrentPlayer().threeOfAKind)
-    updateScoreboardValue(currentPlayer + '-four-of-a-kind', getCurrentPlayer().fourOfAKind)
-    updateScoreboardValue(currentPlayer + '-small-straight', getCurrentPlayer().smallStraight)
-    updateScoreboardValue(currentPlayer + '-large-straight', getCurrentPlayer().largeStraight)
-    updateScoreboardValue(currentPlayer + '-full-house', getCurrentPlayer().fullHouse)
-    updateScoreboardValue(currentPlayer + '-chance', getCurrentPlayer().chance)
-    updateScoreboardValue(currentPlayer + '-yatzy', getCurrentPlayer().yatzy)
-    updateScoreboardValue(currentPlayer + '-total', getCurrentPlayer().getTotalSum())
+    updateScoreboardValue(currentPlayer + '-ones', getCurrentPlayer().ones);
+    updateScoreboardValue(currentPlayer + '-twos', getCurrentPlayer().twos);
+    updateScoreboardValue(currentPlayer + '-threes', getCurrentPlayer().threes);
+    updateScoreboardValue(currentPlayer + '-fours', getCurrentPlayer().fours);
+    updateScoreboardValue(currentPlayer + '-fives', getCurrentPlayer().fives);
+    updateScoreboardValue(currentPlayer + '-sixes', getCurrentPlayer().sixes);
+    updateScoreboardValue(currentPlayer + '-top-sum', getCurrentPlayer().getSumUpperHalf());
+    updateScoreboardValue(currentPlayer + '-bonus', getCurrentPlayer().getBonus());
+    updateScoreboardValue(currentPlayer + '-one-pair', getCurrentPlayer().onePair);
+    updateScoreboardValue(currentPlayer + '-two-pairs', getCurrentPlayer().twoPairs);
+    updateScoreboardValue(currentPlayer + '-three-of-a-kind', getCurrentPlayer().threeOfAKind);
+    updateScoreboardValue(currentPlayer + '-four-of-a-kind', getCurrentPlayer().fourOfAKind);
+    updateScoreboardValue(currentPlayer + '-small-straight', getCurrentPlayer().smallStraight);
+    updateScoreboardValue(currentPlayer + '-large-straight', getCurrentPlayer().largeStraight);
+    updateScoreboardValue(currentPlayer + '-full-house', getCurrentPlayer().fullHouse);
+    updateScoreboardValue(currentPlayer + '-chance', getCurrentPlayer().chance);
+    updateScoreboardValue(currentPlayer + '-yatzy', getCurrentPlayer().yatzy);
+    updateScoreboardValue(currentPlayer + '-total', getCurrentPlayer().getTotalSum());
 }
 
 function updateScoreboardValue(id, value) {
@@ -293,11 +293,11 @@ function initiatePlayers() {
     player2 = new Player(null);
     
     while (player1.name === undefined || player1.name === null || player1.name === "") {
-        player1.name = prompt("Enter player 1's name: ");
+        player1.name = /*prompt("Enter player 1's name: ")*/ "Player 1";
     }
     
     while (player2.name === undefined || player2.name === null || player2.name === "") {
-        player2.name = prompt("Enter player 2's name: ");
+        player2.name = /*prompt("Enter player 2's name: ")*/ "Player 2";
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
