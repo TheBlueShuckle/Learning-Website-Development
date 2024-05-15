@@ -1,6 +1,7 @@
 const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
 const maxRollsPerTurn = 3;
+let rollingDice;
 let scoreboardIsOpen = false;
 let turn = 0;
 let diceRollCount = 0;
@@ -18,6 +19,7 @@ class Dice {
 
 let dice = getDice(document.querySelectorAll(".dice-checkbox"));
 initiatePlayers();
+continuallyRollDice();
 
 for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
     document.querySelectorAll('.score-button')[i].addEventListener("click", function() {
@@ -30,6 +32,7 @@ function changePlayer(i) {
     addScoreToPlayer(buttonId);
     getCurrentPlayer().pickedCombinations.push(buttonId);
     updateScoreboard();
+    unlockAllDice();
 
     for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
         document.querySelectorAll('.score-button')[i].disabled = false;
@@ -42,6 +45,7 @@ function changePlayer(i) {
 
     document.getElementById('main-ui').style.display = 'block';
     document.getElementById('choose-ui').style.display =  'none';
+    continuallyRollDice();
 }
 
 function resetMainButtons() {
@@ -52,15 +56,39 @@ function resetMainButtons() {
     endTurnButton.disabled = true;
 }
 
+function unlockAllDice() {
+    dice.forEach(die => {
+        die.checkbox.checked = false;
+    });
+}
+
+function continuallyRollDice() {
+    rollingDice = setInterval(function() {
+        dice.forEach(randomizeDieValue);
+    }, rollingSpeedMilliseconds);
+}
+
 function rollDice() {
     let rollButton = document.getElementById('roll-button');
     let endTurnButton = document.getElementById('end-turn-button');
-    let rollingDice;
 
     rollButton.disabled = true;
     endTurnButton.disabled = true;
 
-    if (!allDiceLocked(dice)){
+    if (diceRollCount === 0) {
+        clearInterval(rollingDice);
+        rollingDice = null;
+        rollButton.disabled = false;
+        endTurnButton.disabled = false;
+
+        dice.forEach(function(dice) {
+            dice.checkbox.disabled = false;
+        });
+
+        diceRollCount++;
+    }
+
+    else if (!allDiceLocked(dice)){
         dice.forEach(function(dice) {
             dice.checkbox.disabled = true;
         })
@@ -77,10 +105,6 @@ function rollDice() {
                 });
 
                 diceRollCount++;
-
-                if (diceRollCount === 0) {
-                    endTurnButton.disabled = true;
-                }
 
                 if (diceRollCount === maxRollsPerTurn) {
                     rollButton.disabled = true;
