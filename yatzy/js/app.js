@@ -63,6 +63,9 @@ function unlockAllDice() {
 }
 
 function continuallyRollDice() {
+    dice.forEach(function(dice) {
+        dice.checkbox.disabled = true;
+    });
     rollingDice = setInterval(function() {
         dice.forEach(randomizeDieValue);
     }, rollingSpeedMilliseconds);

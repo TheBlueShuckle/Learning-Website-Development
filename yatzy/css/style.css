@@ -124,7 +124,7 @@ h1 {
     border: none;
 }
 
-.roll-button button:active{
+.roll-button button:active, button:disabled{
     top: 10px;
     background-color: #ff1b1b;
     filter: brightness(85%);

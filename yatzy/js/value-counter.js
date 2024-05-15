@@ -117,12 +117,11 @@ class ValueCounter {
         for (let i = 0; i < this.valueCounts.length; i++) {
             if (this.valueCounts[i] === 3) {
                 for (let j = 0; j < this.valueCounts.length; j++) {
-                    if (this.valueCounts[i] === 2) {
+                    if (this.valueCounts[j] === 2) {
                         calculatedValue = 3 * (i + 1) + 2 * (j + 1);
-                        break;
+                        return calculatedValue;
                     }
                 }
-                break;
             }
         }
     
