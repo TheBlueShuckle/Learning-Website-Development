@@ -3,8 +3,8 @@ const rollingSpeedMilliseconds = 50;
 const maxRollsPerTurn = 3;
 let rollingDice;
 let scoreboardIsOpen = false;
-let turn = 0;
-let diceRollCount = 0;
+let turn = 1;
+let diceThrowCount = 0;
 let valueCounter;
 let player1;
 let player2;
@@ -20,6 +20,7 @@ class Dice {
 let dice = getDice(document.querySelectorAll(".dice-checkbox"));
 initiatePlayers();
 continuallyRollDice();
+changeThrowsLeftText();
 
 for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
     document.querySelectorAll('.score-button')[i].addEventListener("click", function() {
@@ -29,23 +30,44 @@ for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
 
 function changePlayer(i) {
     let buttonId = document.getElementsByClassName('score-button')[i].id;
+
     addScoreToPlayer(buttonId);
     getCurrentPlayer().pickedCombinations.push(buttonId);
     updateScoreboard();
-    unlockAllDice();
+    unlockAllDice();    
 
     for (let i = 0; i < document.querySelectorAll('.score-button').length; i++) {
         document.querySelectorAll('.score-button')[i].disabled = false;
     }
 
-    turn++;
-    diceRollCount = 0;
-
     resetMainButtons();
 
+    turn++;
+    diceThrowCount = 0;
+
+    changeCurrentTurnText();
+    changeThrowsLeftText();
     document.getElementById('main-ui').style.display = 'block';
     document.getElementById('choose-ui').style.display =  'none';
     continuallyRollDice();
+}
+
+function changeThrowsLeftText() {
+    let throwsLeftText = document.getElementById('throws-left-text');
+    let throwsLeft = 3 - diceThrowCount;
+
+    if (throwsLeft !== 1) {
+        throwsLeftText.innerHTML = throwsLeft + " throws left";
+    }
+
+    else {
+        throwsLeftText.innerHTML = throwsLeft + " throw left";
+    }
+}
+
+function changeCurrentTurnText() {
+    let playerTurnText = document.getElementById('players-turn-text');
+    playerTurnText.innerHTML = "Turn " + turn + ": " + getCurrentPlayer().name + "'s turn";
 }
 
 function resetMainButtons() {
@@ -74,11 +96,13 @@ function continuallyRollDice() {
 function rollDice() {
     let rollButton = document.getElementById('roll-button');
     let endTurnButton = document.getElementById('end-turn-button');
+    diceThrowCount++;
+    changeThrowsLeftText();
 
     rollButton.disabled = true;
     endTurnButton.disabled = true;
 
-    if (diceRollCount === 0) {
+    if (diceThrowCount === 1) {
         clearInterval(rollingDice);
         rollingDice = null;
         rollButton.disabled = false;
@@ -87,8 +111,6 @@ function rollDice() {
         dice.forEach(function(dice) {
             dice.checkbox.disabled = false;
         });
-
-        diceRollCount++;
     }
 
     else if (!allDiceLocked(dice)){
@@ -107,11 +129,9 @@ function rollDice() {
                     dice.checkbox.disabled = false;
                 });
 
-                diceRollCount++;
-
-                if (diceRollCount === maxRollsPerTurn) {
+                if (diceThrowCount === maxRollsPerTurn) {
                     rollButton.disabled = true;
-                }
+                }                
             }
         }, rollingTimeMilliseconds);
 
@@ -258,7 +278,7 @@ function addScoreToPlayer(id) {
 }
 
 function getCurrentPlayer() {
-    return turn % 2 === 0 ?  player1 : player2;
+    return turn % 2 === 0 ? player2 : player1;
 }
 
 function updateScoreboard() {
@@ -293,15 +313,17 @@ function initiatePlayers() {
     player2 = new Player(null);
     
     while (player1.name === undefined || player1.name === null || player1.name === "") {
-        player1.name = /*prompt("Enter player 1's name: ")*/ "Player 1";
+        player1.name = /*prompt("Enter player 1's name: ")*/ "Foo";
     }
     
     while (player2.name === undefined || player2.name === null || player2.name === "") {
-        player2.name = /*prompt("Enter player 2's name: ")*/ "Player 2";
+        player2.name = /*prompt("Enter player 2's name: ")*/ "Bar";
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
     document.getElementById('p2-name').innerHTML = player2.name;
+
+    changeCurrentTurnText();
 }
 
 function lockPickedCombinations(player) {
