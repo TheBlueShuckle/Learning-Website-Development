@@ -113,7 +113,7 @@
             </table>
         </div>
 
-        <div class="main-content" id="main-ui">
+        <div class="main-content" id="main-ui" style="display: none;">
             <h1 class="text-center text">Yatzy</h1>
             <h2 class="text-center text" id="players-turn-text"></h2>
 
@@ -172,71 +172,87 @@
             </div>
         </div>
 
-        <div class="main-content" id="choose-ui">
+        <div class="main-content" id="choose-ui" style="display: block;">
             <table class="choose-combination">
                 <tr>
                     <th>Yatzy</th>
-                    <th>Player name</th>
+                    <th id="player-combination-screen-text">Player name</th>
+                    <th>Max Points</th>
                 </tr>
                 <tr>
                     <td>Ones</td>
-                    <td><button class="score-button" id="ones-button"></button></td>
+                    <td><button class="score-button" id="ones-button">0</button></td>
+                    <td>5 pts</td>
                 </tr>
                 <tr>
                     <td>Twos</td>
-                    <td><button class="score-button" id="twos-button"></button></td>
+                    <td><button class="score-button" id="twos-button">0</button></td>
+                    <td>10 pts</td>
                 </tr>
                 <tr>
                     <td>Threes</td>
-                    <td><button class="score-button" id="threes-button"></button></td>
+                    <td><button class="score-button" id="threes-button">0</button></td>
+                    <td>15 pts</td>
                 </tr>
                 <tr>
                     <td>Fours</td>
-                    <td><button class="score-button" id="fours-button"></button></td>
+                    <td><button class="score-button" id="fours-button">0</button></td>
+                    <td>20 pts</td>
                 </tr>
                 <tr>
                     <td>Fives</td>
-                    <td><button class="score-button" id="fives-button"></button></td>
+                    <td><button class="score-button" id="fives-button">0</button></td>
+                    <td>25 pts</td>
                 </tr>
                 <tr>
                     <td>Sixes</td>
-                    <td><button class="score-button" id="sixes-button"></button></td>
+                    <td><button class="score-button" id="sixes-button">0</button></td>
+                    <td>30 pts</td>
                 </tr>
                 <tr>
                     <td>One Pair</td>
-                    <td><button class="score-button" id="one-pair-button"></button></td>
+                    <td><button class="score-button" id="one-pair-button">0</button></td>
+                    <td>12 pts</td>
                 </tr>
                 <tr>
                     <td>Two Pairs</td>
-                    <td><button class="score-button" id="two-pairs-button"></button></td>
+                    <td><button class="score-button" id="two-pairs-button">0</button></td>
+                    <td>22 pts</td>
                 </tr>
                 <tr>
                     <td>Three of a Kind</td>
-                    <td><button class="score-button" id="three-of-a-kind-button"></button></td>
+                    <td><button class="score-button" id="three-of-a-kind-button">0</button></td>
+                    <td>18 pts</td>
                 </tr>
                 <tr>
                     <td>Four of a kind</td>
-                    <td><button class="score-button" id="four-of-a-kind-button"></button></td>
+                    <td><button class="score-button" id="four-of-a-kind-button">0</button></td>
+                    <td>24 pts</td>
                 </tr>
                 <tr>
                     <td>Small Straight</td>
-                    <td><button class="score-button" id="small-straight-button"></button></td>
+                    <td><button class="score-button" id="small-straight-button">0</button></td>
+                    <td>15 pts</td>
                 </tr>
                 <tr>
                     <td>Large Straight</td>
-                    <td><button class="score-button" id="large-straight-button"></button></td>
+                    <td><button class="score-button" id="large-straight-button">0</button></td>
+                    <td>30 pts</td>
                 </tr>
                 <tr>
                     <td>Full house</td>
-                    <td><button class="score-button" id="full-house-button"></button></td>
+                    <td><button class="score-button" id="full-house-button">0</button></td>
+                    <td>28 pts</td>
                 </tr>
                 <tr>
                     <td>Chance</td> 
-                    <td><button class="score-button" id="chance-button"></button></td>
+                    <td><button class="score-button" id="chance-button">0</button></td>
+                    <td>30 pts</td>
                 </tr>
                 <tr>
                     <td>Yatzy</td>
-                    <td><button class="score-button" id="yatzy-button"></button></td>
+                    <td><button class="score-button" id="yatzy-button">0</button></td>
+                    <td>50 pts</td>
                 </tr>
             </table>
         </div>

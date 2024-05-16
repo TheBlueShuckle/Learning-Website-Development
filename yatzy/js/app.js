@@ -67,7 +67,9 @@ function changeThrowsLeftText() {
 
 function changeCurrentTurnText() {
     let playerTurnText = document.getElementById('players-turn-text');
+    let playerCombinationText = document.getElementById('player-combination-screen-text');
     playerTurnText.innerHTML = "Turn " + turn + ": " + getCurrentPlayer().name + "'s turn";
+    playerCombinationText.innerHTML = getCurrentPlayer().name
 }
 
 function resetMainButtons() {
