@@ -337,6 +337,8 @@ function lockPickedCombinations(player) {
 }
 
 function toggleScoreboard() {
-    document.getElementsByClassName("scoreboard")[0].style.display = scoreboardIsOpen ? 'none' : 'flex';
+    document.getElementsByClassName("scoreboard")[0].style.display = scoreboardIsOpen ? 'none' : 'block';
+    document.getElementsByClassName("darken-background")[0].style.display = scoreboardIsOpen ? 'none' : 'block';
+    document.getElementById('open-scoreboard-button').style.display = scoreboardIsOpen ? 'block' : 'none';
     scoreboardIsOpen = !scoreboardIsOpen;
 }

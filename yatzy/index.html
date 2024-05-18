@@ -5,115 +5,118 @@
         <title>Yatzy - The Site</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/5c702dc3f3.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
-        <button class="toggle-scoreboard-button" onclick="toggleScoreboard()">Show Scoreboard</button>
-
-        <div class="scoreboard">
-            <table>
-                <tr>
-                    <th>Yatzy</th>
-                    <th id="p1-name">0</th>
-                    <th id="p2-name">0</th>
-                </tr>
-                <tr>
-                    <td>Ones</td>
-                    <td id="p1-ones">0</td>
-                    <td id="p2-ones">0</th>
-                </tr>
-                <tr>
-                    <td>Twos</td>
-                    <td id="p1-twos">0</td>
-                    <td id="p2-twos">0</th>
-                </tr>
-                <tr>
-                    <td>Threes</td>
-                    <td id="p1-threes">0</td>
-                    <td id="p2-threes">0</th>
-                </tr>
-                <tr>
-                    <td>Fours</td>
-                    <td id="p1-fours">0</td>
-                    <td id="p2-fours">0</th>
-                </tr>
-                <tr>
-                    <td>Fives</td>
-                    <td id="p1-fives">0</td>
-                    <td id="p2-fives">0</th>
-                </tr>
-                <tr>
-                    <td>Sixes</td>
-                    <td id="p1-sixes">0</td>
-                    <td id="p2-sixes">0</th>
-                </tr>
-                <tr>
-                    <td>Sum</td>
-                    <td id="p1-top-sum">0</td>
-                    <td id="p2-top-sum">0</th>
-                </tr>
-                <tr>
-                    <td>Bonus</td>
-                    <td id="p1-bonus">0</td>
-                    <td id="p2-bonus">0</th>
-                </tr>
-                <tr>
-                    <td>One Pair</td>
-                    <td id="p1-one-pair">0</td>
-                    <td id="p2-one-pair">0</th>
-                </tr>
-                <tr>
-                    <td>Two Pairs</td>
-                    <td id="p1-two-pairs">0</td>
-                    <td id="p2-two-pairs">0</th>
-                </tr>
-                <tr>
-                    <td>Three of a Kind</td>
-                    <td id="p1-three-of-a-kind">0</td>
-                    <td id="p2-three-of-a-kind">0</th>
-                </tr>
-                <tr>
-                    <td>Four of a Kind</td>
-                    <td id="p1-four-of-a-kind">0</td>
-                    <td id="p2-four-of-a-kind">0</th>
-                </tr>
-                <tr>
-                    <td>Small Straight</td>
-                    <td id="p1-small-straight">0</td>
-                    <td id="p2-small-straight">0</th>
-                </tr>
-                <tr>
-                    <td>Large Straight</td>
-                    <td id="p1-large-straight">0</td>
-                    <td id="p2-large-straight">0</th>
-                </tr>
-                <tr>
-                    <td>Full House</td>
-                    <td id="p1-full-house">0</td>
-                    <td id="p2-full-house">0</th>
-                </tr>
-                <tr>
-                    <td>Chance</td>
-                    <td id="p1-chance">0</td>
-                    <td id="p2-chance">0</th>
-                </tr>
-                <tr>
-                    <td>Yatzy</td>
-                    <td id="p1-yatzy">0</td>
-                    <td id="p2-yatzy">0</th>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td id="p1-total">0</td>
-                    <td id="p2-total">0</th>
-                </tr>
-            </table>
+        <button id="open-scoreboard-button" onclick="toggleScoreboard()">Show Scoreboard</button>
+        
+        <div class="darken-background">
+            <div class="scoreboard">
+                <button id="close-scoreboard-button" onclick="toggleScoreboard()"><i class="fa-solid fa-xmark"></i></button>
+                <table>
+                    <tr>
+                        <th>Yatzy</th>
+                        <th id="p1-name">0</th>
+                        <th id="p2-name">0</th>
+                    </tr>
+                    <tr>
+                        <td>Ones</td>
+                        <td id="p1-ones">0</td>
+                        <td id="p2-ones">0</th>
+                    </tr>
+                    <tr>
+                        <td>Twos</td>
+                        <td id="p1-twos">0</td>
+                        <td id="p2-twos">0</th>
+                    </tr>
+                    <tr>
+                        <td>Threes</td>
+                        <td id="p1-threes">0</td>
+                        <td id="p2-threes">0</th>
+                    </tr>
+                    <tr>
+                        <td>Fours</td>
+                        <td id="p1-fours">0</td>
+                        <td id="p2-fours">0</th>
+                    </tr>
+                    <tr>
+                        <td>Fives</td>
+                        <td id="p1-fives">0</td>
+                        <td id="p2-fives">0</th>
+                    </tr>
+                    <tr>
+                        <td>Sixes</td>
+                        <td id="p1-sixes">0</td>
+                        <td id="p2-sixes">0</th>
+                    </tr>
+                    <tr>
+                        <td>Sum</td>
+                        <td id="p1-top-sum">0</td>
+                        <td id="p2-top-sum">0</th>
+                    </tr>
+                    <tr>
+                        <td>Bonus</td>
+                        <td id="p1-bonus">0</td>
+                        <td id="p2-bonus">0</th>
+                    </tr>
+                    <tr>
+                        <td>One Pair</td>
+                        <td id="p1-one-pair">0</td>
+                        <td id="p2-one-pair">0</th>
+                    </tr>
+                    <tr>
+                        <td>Two Pairs</td>
+                        <td id="p1-two-pairs">0</td>
+                        <td id="p2-two-pairs">0</th>
+                    </tr>
+                    <tr>
+                        <td>Three of a Kind</td>
+                        <td id="p1-three-of-a-kind">0</td>
+                        <td id="p2-three-of-a-kind">0</th>
+                    </tr>
+                    <tr>
+                        <td>Four of a Kind</td>
+                        <td id="p1-four-of-a-kind">0</td>
+                        <td id="p2-four-of-a-kind">0</th>
+                    </tr>
+                    <tr>
+                        <td>Small Straight</td>
+                        <td id="p1-small-straight">0</td>
+                        <td id="p2-small-straight">0</th>
+                    </tr>
+                    <tr>
+                        <td>Large Straight</td>
+                        <td id="p1-large-straight">0</td>
+                        <td id="p2-large-straight">0</th>
+                    </tr>
+                    <tr>
+                        <td>Full House</td>
+                        <td id="p1-full-house">0</td>
+                        <td id="p2-full-house">0</th>
+                    </tr>
+                    <tr>
+                        <td>Chance</td>
+                        <td id="p1-chance">0</td>
+                        <td id="p2-chance">0</th>
+                    </tr>
+                    <tr>
+                        <td>Yatzy</td>
+                        <td id="p1-yatzy">0</td>
+                        <td id="p2-yatzy">0</th>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="p1-total">0</td>
+                        <td id="p2-total">0</th>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div class="main-content" id="main-ui" style="display: none;">
+        <div class="main-content" id="main-ui">
             <h1 class="text-center text">Yatzy</h1>
             <h2 class="text-center text" id="players-turn-text"></h2>
 
@@ -172,7 +175,9 @@
             </div>
         </div>
 
-        <div class="main-content" id="choose-ui" style="display: block;">
+        <div class="main-content" id="choose-ui">
+            <h1 class="text-center text" style="margin-bottom: -5vh;">Choose Combination</h1>
+
             <table class="choose-combination">
                 <tr>
                     <th>Yatzy</th>
