@@ -282,6 +282,7 @@ body {
         height: 80vh;
         white-space: nowrap;
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .darken-background {

@@ -317,11 +317,23 @@ function initiatePlayers() {
     player2 = new Player(null);
     
     while (player1.name === undefined || player1.name === null || player1.name === "") {
-        player1.name = prompt("Enter player 1's name: ");
+        let name = prompt("Enter player 1's name: ");
+
+        if (name.length > 12) {
+            name = name.slice(0, 12);
+        }
+
+        player1.name = name;
     }
     
     while (player2.name === undefined || player2.name === null || player2.name === "") {
-        player2.name = prompt("Enter player 2's name: ");
+        let name = prompt("Enter player 2's name: ");
+
+        if (name.length > 12) {
+            name = name.slice(0, 12);
+        }
+
+        player2.name = name;
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
