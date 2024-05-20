@@ -18,6 +18,8 @@ class Dice {
 }
 
 let dice = getDice(document.querySelectorAll(".dice-checkbox"));
+document.getElementById('end-turn-button').disabled = true;
+unlockAllDice();
 initiatePlayers();
 continuallyRollDice();
 changeThrowsLeftText();
@@ -315,11 +317,11 @@ function initiatePlayers() {
     player2 = new Player(null);
     
     while (player1.name === undefined || player1.name === null || player1.name === "") {
-        player1.name = /*prompt("Enter player 1's name: ")*/ "Foo";
+        player1.name = prompt("Enter player 1's name: ");
     }
     
     while (player2.name === undefined || player2.name === null || player2.name === "") {
-        player2.name = /*prompt("Enter player 2's name: ")*/ "Bar";
+        player2.name = prompt("Enter player 2's name: ");
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
