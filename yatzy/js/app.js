@@ -312,34 +312,29 @@ function updateScoreboardValue(id, value) {
     document.getElementById(id).innerHTML = value;
 }
 
-function initiatePlayers() {
-    player1 = new Player(null);
-    player2 = new Player(null);
-    
+function initiatePlayers() {    
     while (player1.name === undefined || player1.name === null || player1.name === "") {
-        let name = prompt("Enter player 1's name: ");
-
-        if (name.length > 12) {
-            name = name.slice(0, 12);
-        }
-
-        player1.name = name;
+        player1 = new Player(assignPlayerNames());
     }
     
     while (player2.name === undefined || player2.name === null || player2.name === "") {
-        let name = prompt("Enter player 2's name: ");
-
-        if (name.length > 12) {
-            name = name.slice(0, 12);
-        }
-
-        player2.name = name;
+        player2 = new Player(assignPlayerNames());
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
     document.getElementById('p2-name').innerHTML = player2.name;
 
     changeCurrentTurnText();
+}
+
+function assignPlayerNames() {
+    let name = prompt("Enter player 2's name: ");
+
+    if (name.length > 12) {
+        name = name.slice(0, 12);
+    }
+
+    return name;
 }
 
 function lockPickedCombinations(player) {
