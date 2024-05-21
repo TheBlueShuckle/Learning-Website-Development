@@ -1,6 +1,7 @@
 const rollingTimeMilliseconds = 2000;
 const rollingSpeedMilliseconds = 50;
 const maxRollsPerTurn = 3;
+const totalCombos = 15;
 let rollingDice;
 let scoreboardIsOpen = false;
 let turn = 1;
@@ -51,6 +52,19 @@ function changePlayer(i) {
     changeThrowsLeftText();
     document.getElementById('main-ui').style.display = 'block';
     document.getElementById('choose-ui').style.display =  'none';
+
+    if (checkIfGameIsDone()) {
+        let winner = player1.getTotalSum() > player2.getTotalSum() ? player1.name : player2.name;
+
+        if (player1.getTotalSum() === player2.getTotalSum()) {
+            alert('Game is over! ' + "Tie!")
+        }
+
+        else {
+            alert('Game is over!  ' + winner + " won!")
+        }
+    }
+    
     continuallyRollDice();
 }
 
@@ -91,6 +105,7 @@ function unlockAllDice() {
 function continuallyRollDice() {
     dice.forEach(function(dice) {
         dice.checkbox.disabled = true;
+        dice.image.alt = "";
     });
     rollingDice = setInterval(function() {
         dice.forEach(randomizeDieValue);
@@ -103,6 +118,10 @@ function rollDice() {
     diceThrowCount++;
     changeThrowsLeftText();
 
+    dice.forEach(function(dice) {
+        dice.image.alt = "";
+    });
+
     rollButton.disabled = true;
     endTurnButton.disabled = true;
 
@@ -114,6 +133,7 @@ function rollDice() {
 
         dice.forEach(function(dice) {
             dice.checkbox.disabled = false;
+            dice.image.alt = dice.value;
         });
     }
 
@@ -131,6 +151,7 @@ function rollDice() {
     
                 dice.forEach(function(dice) {
                     dice.checkbox.disabled = false;
+                    dice.image.alt = dice.value;
                 });
 
                 if (diceThrowCount === maxRollsPerTurn) {
@@ -206,6 +227,17 @@ function endTurn() {
     lockPickedCombinations(getCurrentPlayer());
 
     displayValues(valueCounter);
+}
+
+function checkIfGameIsDone() {
+    let pickedCombinationsPlayer1 = player1.PickedCombinations;
+    let pickedCombinationsPlayer2 = player2.pickedCombinations;
+
+    if (pickedCombinationsPlayer1.length === totalCombos || pickedCombinationsPlayer2 === totalCombos) {
+        return true;
+    }
+
+    return false;
 }
 
 function displayValues(valueCounter) {
