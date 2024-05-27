@@ -11,256 +11,260 @@
     </head>
 
     <body>
-        <button id="open-scoreboard-button" onclick="toggleScoreboard()" type="button">Show Scoreboard</button>
+        <main>
+            <section >
+                <button id="open-scoreboard-button" onclick="toggleScoreboard()" type="button">Show Scoreboard</button>
+            
+                <div class="darken-background">
+                    <div class="scoreboard">
+                        <button id="close-scoreboard-button" onclick="toggleScoreboard()" type="button" title="Hide Scoreboard"><i class="fa-solid fa-xmark"></i></button>
+                        <table>
+                            <tr id="names">
+                                <th>Yatzy</th>
+                                <th id="p1-name">0</th>
+                                <th id="p2-name">0</th>
+                            </tr>
+                            <tr>
+                                <td>Ones</td>
+                                <td id="p1-ones">0</td>
+                                <td id="p2-ones">0</th>
+                            </tr>
+                            <tr>
+                                <td>Twos</td>
+                                <td id="p1-twos">0</td>
+                                <td id="p2-twos">0</th>
+                            </tr>
+                            <tr>
+                                <td>Threes</td>
+                                <td id="p1-threes">0</td>
+                                <td id="p2-threes">0</th>
+                            </tr>
+                            <tr>
+                                <td>Fours</td>
+                                <td id="p1-fours">0</td>
+                                <td id="p2-fours">0</th>
+                            </tr>
+                            <tr>
+                                <td>Fives</td>
+                                <td id="p1-fives">0</td>
+                                <td id="p2-fives">0</th>
+                            </tr>
+                            <tr>
+                                <td>Sixes</td>
+                                <td id="p1-sixes">0</td>
+                                <td id="p2-sixes">0</th>
+                            </tr>
+                            <tr id="sum">
+                                <td>Sum</td>
+                                <td id="p1-top-sum">0</td>
+                                <td id="p2-top-sum">0</th>
+                            </tr>
+                            <tr>
+                                <td>Bonus</td>
+                                <td id="p1-bonus">0</td>
+                                <td id="p2-bonus">0</th>
+                            </tr>
+                            <tr>
+                                <td>One Pair</td>
+                                <td id="p1-one-pair">0</td>
+                                <td id="p2-one-pair">0</th>
+                            </tr>
+                            <tr>
+                                <td>Two Pairs</td>
+                                <td id="p1-two-pairs">0</td>
+                                <td id="p2-two-pairs">0</th>
+                            </tr>
+                            <tr>
+                                <td>Three of a Kind</td>
+                                <td id="p1-three-of-a-kind">0</td>
+                                <td id="p2-three-of-a-kind">0</th>
+                            </tr>
+                            <tr>
+                                <td>Four of a Kind</td>
+                                <td id="p1-four-of-a-kind">0</td>
+                                <td id="p2-four-of-a-kind">0</th>
+                            </tr>
+                            <tr>
+                                <td>Small Straight</td>
+                                <td id="p1-small-straight">0</td>
+                                <td id="p2-small-straight">0</th>
+                            </tr>
+                            <tr>
+                                <td>Large Straight</td>
+                                <td id="p1-large-straight">0</td>
+                                <td id="p2-large-straight">0</th>
+                            </tr>
+                            <tr>
+                                <td>Full House</td>
+                                <td id="p1-full-house">0</td>
+                                <td id="p2-full-house">0</th>
+                            </tr>
+                            <tr>
+                                <td>Chance</td>
+                                <td id="p1-chance">0</td>
+                                <td id="p2-chance">0</th>
+                            </tr>
+                            <tr>
+                                <td>Yatzy</td>
+                                <td id="p1-yatzy">0</td>
+                                <td id="p2-yatzy">0</th>
+                            </tr>
+                            <tr id="total">
+                                <td>Total</td>
+                                <td id="p1-total">0</td>
+                                <td id="p2-total">0</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="main-content" id="main-ui">
+                <h1 class="text-center text">Yatzy</h1>
+                <h2 class="text-center text" id="players-turn-text"></h2>
+    
+                <div class="dice-container col-12">
+                    <input type="checkbox" id="dice-checkbox-1" class="dice-checkbox">
+                    <label class="die-label" for="dice-checkbox-1" title="Lock Die-1">
+                        <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
+                        <div class="locked-die-overlay">
+                            <i class="fa fa-solid fa-lock"></i>
+                        </div>
+                    </label>
+    
+                    <input type="checkbox" id="dice-checkbox-2" class="dice-checkbox">
+                    <label class="die-label" for="dice-checkbox-2" title="Lock Die-2">
+                        <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
+                        <div class="locked-die-overlay">
+                            <i class="fa fa-solid fa-lock"></i>
+                        </div>
+                    </label>            
         
-        <div class="darken-background">
-            <div class="scoreboard">
-                <button id="close-scoreboard-button" onclick="toggleScoreboard()" type="button" title="Hide Scoreboard"><i class="fa-solid fa-xmark"></i></button>
-                <table>
-                    <tr id="names">
-                        <th>Yatzy</th>
-                        <th id="p1-name">0</th>
-                        <th id="p2-name">0</th>
-                    </tr>
-                    <tr>
-                        <td>Ones</td>
-                        <td id="p1-ones">0</td>
-                        <td id="p2-ones">0</th>
-                    </tr>
-                    <tr>
-                        <td>Twos</td>
-                        <td id="p1-twos">0</td>
-                        <td id="p2-twos">0</th>
-                    </tr>
-                    <tr>
-                        <td>Threes</td>
-                        <td id="p1-threes">0</td>
-                        <td id="p2-threes">0</th>
-                    </tr>
-                    <tr>
-                        <td>Fours</td>
-                        <td id="p1-fours">0</td>
-                        <td id="p2-fours">0</th>
-                    </tr>
-                    <tr>
-                        <td>Fives</td>
-                        <td id="p1-fives">0</td>
-                        <td id="p2-fives">0</th>
-                    </tr>
-                    <tr>
-                        <td>Sixes</td>
-                        <td id="p1-sixes">0</td>
-                        <td id="p2-sixes">0</th>
-                    </tr>
-                    <tr id="sum">
-                        <td>Sum</td>
-                        <td id="p1-top-sum">0</td>
-                        <td id="p2-top-sum">0</th>
-                    </tr>
-                    <tr>
-                        <td>Bonus</td>
-                        <td id="p1-bonus">0</td>
-                        <td id="p2-bonus">0</th>
-                    </tr>
-                    <tr>
-                        <td>One Pair</td>
-                        <td id="p1-one-pair">0</td>
-                        <td id="p2-one-pair">0</th>
-                    </tr>
-                    <tr>
-                        <td>Two Pairs</td>
-                        <td id="p1-two-pairs">0</td>
-                        <td id="p2-two-pairs">0</th>
-                    </tr>
-                    <tr>
-                        <td>Three of a Kind</td>
-                        <td id="p1-three-of-a-kind">0</td>
-                        <td id="p2-three-of-a-kind">0</th>
-                    </tr>
-                    <tr>
-                        <td>Four of a Kind</td>
-                        <td id="p1-four-of-a-kind">0</td>
-                        <td id="p2-four-of-a-kind">0</th>
-                    </tr>
-                    <tr>
-                        <td>Small Straight</td>
-                        <td id="p1-small-straight">0</td>
-                        <td id="p2-small-straight">0</th>
-                    </tr>
-                    <tr>
-                        <td>Large Straight</td>
-                        <td id="p1-large-straight">0</td>
-                        <td id="p2-large-straight">0</th>
-                    </tr>
-                    <tr>
-                        <td>Full House</td>
-                        <td id="p1-full-house">0</td>
-                        <td id="p2-full-house">0</th>
-                    </tr>
-                    <tr>
-                        <td>Chance</td>
-                        <td id="p1-chance">0</td>
-                        <td id="p2-chance">0</th>
-                    </tr>
-                    <tr>
-                        <td>Yatzy</td>
-                        <td id="p1-yatzy">0</td>
-                        <td id="p2-yatzy">0</th>
-                    </tr>
-                    <tr id="total">
-                        <td>Total</td>
-                        <td id="p1-total">0</td>
-                        <td id="p2-total">0</th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="main-content" id="main-ui">
-            <h1 class="text-center text">Yatzy</h1>
-            <h2 class="text-center text" id="players-turn-text"></h2>
-
-            <div class="dice-container col-12">
-                <input type="checkbox" id="dice-checkbox-1" class="dice-checkbox">
-                <label class="die-label" for="dice-checkbox-1" title="Lock Die-1">
-                    <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
-                    <div class="locked-die-overlay">
-                        <i class="fa fa-solid fa-lock"></i>
-                    </div>
-                </label>
-
-                <input type="checkbox" id="dice-checkbox-2" class="dice-checkbox">
-                <label class="die-label" for="dice-checkbox-2" title="Lock Die-2">
-                    <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
-                    <div class="locked-die-overlay">
-                        <i class="fa fa-solid fa-lock"></i>
-                    </div>
-                </label>            
+                    <input type="checkbox" id="dice-checkbox-3" class="dice-checkbox">
+                    <label class="die-label" for="dice-checkbox-3" title="Lock Die-3">
+                        <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
+                        <div class="locked-die-overlay">
+                            <i class="fa fa-solid fa-lock"></i>
+                        </div>
+                    </label>            
+        
+                    <input type="checkbox" id="dice-checkbox-4" class="dice-checkbox">
+                    <label class="die-label" for="dice-checkbox-4" title="Lock Die-4">
+                        <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
+                        <div class="locked-die-overlay">
+                            <i class="fa fa-solid fa-lock"></i>
+                        </div>
+                    </label>        
+        
+                    <input type="checkbox" id="dice-checkbox-5" class="dice-checkbox">
+                    <label class="die-label" for="dice-checkbox-5" title="Lock Die-5">
+                        <img src="images/dice-1.png" alt="" id="dice-5" class="dice">
+                        <div class="locked-die-overlay">
+                            <i class="fa fa-solid fa-lock"></i>
+                        </div>
+                    </label>
+                </div>
     
-                <input type="checkbox" id="dice-checkbox-3" class="dice-checkbox">
-                <label class="die-label" for="dice-checkbox-3" title="Lock Die-3">
-                    <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
-                    <div class="locked-die-overlay">
-                        <i class="fa fa-solid fa-lock"></i>
+                <h3 class="text-center text" id="throws-left-text">Throws left:</h3>
+        
+                <div class="button-container">
+                    <div class="roll-button">
+                        <button id="roll-button" onclick="rollDice()">Roll!</button>
                     </div>
-                </label>            
+                </div>
     
-                <input type="checkbox" id="dice-checkbox-4" class="dice-checkbox">
-                <label class="die-label" for="dice-checkbox-4" title="Lock Die-4">
-                    <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
-                    <div class="locked-die-overlay">
-                        <i class="fa fa-solid fa-lock"></i>
-                    </div>
-                </label>        
-    
-                <input type="checkbox" id="dice-checkbox-5" class="dice-checkbox">
-                <label class="die-label" for="dice-checkbox-5" title="Lock Die-5">
-                    <img src="images/dice-1.png" alt="" id="dice-5" class="dice">
-                    <div class="locked-die-overlay">
-                        <i class="fa fa-solid fa-lock"></i>
-                    </div>
-                </label>
-            </div>
-
-            <h3 class="text-center text" id="throws-left-text">Throws left:</h3>
-    
-            <div class="button-container">
-                <div class="roll-button">
-                    <button id="roll-button" onclick="rollDice()">Roll!</button>
+                <div class="button-container">
+                    <button id="end-turn-button" onclick="endTurn()">End Turn</button>
                 </div>
             </div>
 
-            <div class="button-container">
-                <button id="end-turn-button" onclick="endTurn()">End Turn</button>
+            <div class="main-content" id="choose-ui">
+                <h1 class="text-center text" style="margin-bottom: -5vh;">Choose Combination</h1>
+    
+                <table class="choose-combination">
+                    <tr>
+                        <th>Yatzy</th>
+                        <th id="player-combination-screen-text">Player name</th>
+                        <th>Max Points</th>
+                    </tr>
+                    <tr>
+                        <td>Ones</td>
+                        <td><button class="score-button" id="ones-button">0</button></td>
+                        <td>5 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Twos</td>
+                        <td><button class="score-button" id="twos-button">0</button></td>
+                        <td>10 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Threes</td>
+                        <td><button class="score-button" id="threes-button">0</button></td>
+                        <td>15 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Fours</td>
+                        <td><button class="score-button" id="fours-button">0</button></td>
+                        <td>20 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Fives</td>
+                        <td><button class="score-button" id="fives-button">0</button></td>
+                        <td>25 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Sixes</td>
+                        <td><button class="score-button" id="sixes-button">0</button></td>
+                        <td>30 pts</td>
+                    </tr>
+                    <tr>
+                        <td>One Pair</td>
+                        <td><button class="score-button" id="one-pair-button">0</button></td>
+                        <td>12 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Two Pairs</td>
+                        <td><button class="score-button" id="two-pairs-button">0</button></td>
+                        <td>22 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Three of a Kind</td>
+                        <td><button class="score-button" id="three-of-a-kind-button">0</button></td>
+                        <td>18 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Four of a kind</td>
+                        <td><button class="score-button" id="four-of-a-kind-button">0</button></td>
+                        <td>24 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Small Straight</td>
+                        <td><button class="score-button" id="small-straight-button">0</button></td>
+                        <td>15 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Large Straight</td>
+                        <td><button class="score-button" id="large-straight-button">0</button></td>
+                        <td>30 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Full house</td>
+                        <td><button class="score-button" id="full-house-button">0</button></td>
+                        <td>28 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Chance</td> 
+                        <td><button class="score-button" id="chance-button">0</button></td>
+                        <td>30 pts</td>
+                    </tr>
+                    <tr>
+                        <td>Yatzy</td>
+                        <td><button class="score-button" id="yatzy-button">0</button></td>
+                        <td>50 pts</td>
+                    </tr>
+                </table>
             </div>
-        </div>
-
-        <div class="main-content" id="choose-ui">
-            <h1 class="text-center text" style="margin-bottom: -5vh;">Choose Combination</h1>
-
-            <table class="choose-combination">
-                <tr>
-                    <th>Yatzy</th>
-                    <th id="player-combination-screen-text">Player name</th>
-                    <th>Max Points</th>
-                </tr>
-                <tr>
-                    <td>Ones</td>
-                    <td><button class="score-button" id="ones-button">0</button></td>
-                    <td>5 pts</td>
-                </tr>
-                <tr>
-                    <td>Twos</td>
-                    <td><button class="score-button" id="twos-button">0</button></td>
-                    <td>10 pts</td>
-                </tr>
-                <tr>
-                    <td>Threes</td>
-                    <td><button class="score-button" id="threes-button">0</button></td>
-                    <td>15 pts</td>
-                </tr>
-                <tr>
-                    <td>Fours</td>
-                    <td><button class="score-button" id="fours-button">0</button></td>
-                    <td>20 pts</td>
-                </tr>
-                <tr>
-                    <td>Fives</td>
-                    <td><button class="score-button" id="fives-button">0</button></td>
-                    <td>25 pts</td>
-                </tr>
-                <tr>
-                    <td>Sixes</td>
-                    <td><button class="score-button" id="sixes-button">0</button></td>
-                    <td>30 pts</td>
-                </tr>
-                <tr>
-                    <td>One Pair</td>
-                    <td><button class="score-button" id="one-pair-button">0</button></td>
-                    <td>12 pts</td>
-                </tr>
-                <tr>
-                    <td>Two Pairs</td>
-                    <td><button class="score-button" id="two-pairs-button">0</button></td>
-                    <td>22 pts</td>
-                </tr>
-                <tr>
-                    <td>Three of a Kind</td>
-                    <td><button class="score-button" id="three-of-a-kind-button">0</button></td>
-                    <td>18 pts</td>
-                </tr>
-                <tr>
-                    <td>Four of a kind</td>
-                    <td><button class="score-button" id="four-of-a-kind-button">0</button></td>
-                    <td>24 pts</td>
-                </tr>
-                <tr>
-                    <td>Small Straight</td>
-                    <td><button class="score-button" id="small-straight-button">0</button></td>
-                    <td>15 pts</td>
-                </tr>
-                <tr>
-                    <td>Large Straight</td>
-                    <td><button class="score-button" id="large-straight-button">0</button></td>
-                    <td>30 pts</td>
-                </tr>
-                <tr>
-                    <td>Full house</td>
-                    <td><button class="score-button" id="full-house-button">0</button></td>
-                    <td>28 pts</td>
-                </tr>
-                <tr>
-                    <td>Chance</td> 
-                    <td><button class="score-button" id="chance-button">0</button></td>
-                    <td>30 pts</td>
-                </tr>
-                <tr>
-                    <td>Yatzy</td>
-                    <td><button class="score-button" id="yatzy-button">0</button></td>
-                    <td>50 pts</td>
-                </tr>
-            </table>
-        </div>
+        </main>
 
         <script src="js/player.js"></script>
         <script src="js/value-counter.js"></script>
