@@ -345,17 +345,31 @@ function updateScoreboardValue(id, value) {
 }
 
 function initiatePlayers() {
-    player1 = new Player(null);
-    player2 = new Player(null);
+    player1 = new Player();
+    player2 = new Player();
     
-    while (player1.name === undefined || player1.name === null || player1.name === "") {
+    let nameIsEmpty = player1.name === undefined || player1.name === null || player1.name === "";
+
+    while (nameIsEmpty) {
         let name = prompt("Enter player 1's name: ");
-        player1.name = name.length > 12 ? name.slice(0, 12) : name;
+
+        nameIsEmpty = name === undefined || name === null || name === "";
+
+        if (!nameIsEmpty) {
+            player1.name = name.length > 12 ? name.slice(0, 12) : name;
+        }
     }
     
-    while (player2.name === undefined || player2.name === null || player2.name === "") {
+    nameIsEmpty = player2.name === undefined || player2.name === null || player2.name === "";
+
+    while (nameIsEmpty) {
         let name = prompt("Enter player 2's name: ");
-        player2.name = name.length > 12 ? name.slice(0, 12) : name;
+
+        nameIsEmpty = name === undefined || name === null || name === "";   
+
+        if (!nameIsEmpty) {
+            player2.name = name.length > 12 ? name.slice(0, 12) : name;
+        }
     }
     
     document.getElementById('p1-name').innerHTML = player1.name;
